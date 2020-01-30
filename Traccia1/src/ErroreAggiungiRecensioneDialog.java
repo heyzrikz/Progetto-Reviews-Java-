@@ -1,4 +1,4 @@
-import java.awt.EventQueue;
+
 
 import javax.swing.JDialog;
 import java.awt.Color;
@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+@SuppressWarnings("serial")
 public class ErroreAggiungiRecensioneDialog extends JDialog {
 
 	/**

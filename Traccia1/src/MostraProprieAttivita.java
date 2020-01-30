@@ -1,7 +1,6 @@
-import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,6 +18,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+@SuppressWarnings("serial")
 public class MostraProprieAttivita extends JFrame {
 
 	private JPanel contentPane;
@@ -107,10 +107,11 @@ public class MostraProprieAttivita extends JFrame {
 				"Codice", "Nome", "Via", "Foto"
 			}
 		) {
+			@SuppressWarnings("rawtypes")
 			Class[] columnTypes = new Class[] {
 				String.class, String.class, String.class, ImageIcon.class
 			};
-			public Class getColumnClass(int columnIndex) {
+			public Class<?> getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
 			boolean[] columnEditables = new boolean[] {

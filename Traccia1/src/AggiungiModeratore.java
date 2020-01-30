@@ -1,5 +1,4 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,6 +17,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.JSeparator;
 import javax.swing.JPasswordField;
 
+@SuppressWarnings("serial")
 public class AggiungiModeratore extends JFrame {
 
 	private JPanel contentPane;

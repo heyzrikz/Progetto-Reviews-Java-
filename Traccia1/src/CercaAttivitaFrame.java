@@ -1,5 +1,4 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,6 +14,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JSeparator;
 
+@SuppressWarnings("serial")
 public class CercaAttivitaFrame extends JFrame {
 
 	private JPanel contentPane;
@@ -142,7 +142,7 @@ public class CercaAttivitaFrame extends JFrame {
 		btnBack.setBorder(null);
 		panel.add(btnBack);
 		
-		comboBoxCategoria.setModel(new DefaultComboBoxModel(new String[] {"Ristorante", "Alloggio", "Attrazione"}));
+		comboBoxCategoria.setModel(new DefaultComboBoxModel<String>(new String[] {"Ristorante", "Alloggio", "Attrazione"}));
 		comboBoxCategoria.setForeground(new Color(255, 140, 0));
 		comboBoxCategoria.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		comboBoxCategoria.setBackground(new Color(178, 34, 34));
@@ -151,7 +151,7 @@ public class CercaAttivitaFrame extends JFrame {
 		
 		comboBoxRegione.setForeground(new Color(255, 140, 0));
 		comboBoxRegione.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
-		comboBoxRegione.setModel(new DefaultComboBoxModel(new String[] {"Abruzzo-L'Aquila", "Abruzzo-Chieti", "Abruzzo-Pescara", "Abruzzo-Teramo", "Basilicata-Potenza", "Basilicata-Matera", "Calabria-Reggio Calabria", "Calabria-Catanzaro", "Calabria-Crotone", "Calabria-Vibo Valentia Marina", "Calabria-Cosenza", "Campania-Napoli", "Campania-Avellino", "Campania-Caserta", "Campania-Benevento", "Campania-Salerno", "Emilia Romagna-Bologna", "Emilia Romagna-Reggio Emilia", "Emilia Romagna-Parma", "Emilia Romagna-Modena", "Emilia Romagna-Ferrara", "Emilia Romagna-Forl\u00EC Cesena", "Emilia Romagna-Piacenza", "Emilia Romagna-Ravenna", "Emilia Romagna-Rimini", "Friuli Venezia Giulia-Trieste", "Friuli Venezia Giulia-Gorizia", "Friuli Venezia Giulia-Pordenone", "Friuli Venezia Giulia-Udine", "Lazio-Roma", "Lazio-Latina", "Lazio-Frosinone", "Lazio-Viterbo", "Lazio-Rieti", "Lombardia-Milano", "Lombardia-Bergamo", "Lombardia-Brescia", "Lombardia-Como", "Lombardia-Cremona", "Lombardia-Mantova", "Lombardia-Monza e Brianza", "Lombardia-Pavia", "Lombardia-Sondrio", "Lombardia-Lodi", "Lombardia-Lecco", "Lombardia-Varese", "Marche-Ancona", "Marche-Ascoli Piceno", "Marche-Fermo", "Marche-Macerata", "Marche-Pesaro Urbino", "Molise-Campobasso", "Molise-Isernia", "Piemonte-Torino", "Piemonte-Asti", "Piemonte-Alessandria", "Piemonte-Cuneo", "Piemonte-Novara", "Piemonte-Vercelli", "Piemonte-Verbania", "Piemonte-Biella", "Valle D'Aosta-Aosta", "Puglia-Bari", "Puglia-Barletta-Andria-Trani", "Puglia-Brindisi", "Puglia-Foggia", "Puglia-Lecce", "Puglia-Taranto", "Sardegna-Cagliari", "Sardegna-Sassari", "Sardegna-Nuoro", "Sardegna-Oristano", "Sardegna-Carbonia Iglesias", "Sardegna-Medio Campidano", "Sardegna-Olbia Tempio", "Sardegna-Ogliastra", "Sicilia-Palermo", "Sicilia-Agrigento", "Sicilia-Caltanissetta", "Sicilia-Catania", "Sicilia-Enna", "Sicilia-Messina", "Sicilia-Ragusa", "Sicilia-Siracusa", "Sicilia-Trapani", "Toscana-Arezzo", "Toscana-Massa Carrara", "Toscana-Firenze", "Toscana-Livorno", "Toscana-Grosseto", "Toscana-Lucca", "Toscana-Pisa", "Toscana-Pistoia", "Toscana-Prato", "Toscana-Siena", "Trentino Alto Adige-Trento", "Trentino Alto Adige-Bolzano", "Umbria-Perugia", "Umbria-Terni", "Veneto-Venezia", "Veneto-Belluno", "Veneto-Padova", "Veneto-Rovigo", "Veneto-Treviso", "Veneto-Verona", "Veneto-Vicenza"}));
+		comboBoxRegione.setModel(new DefaultComboBoxModel<String>(new String[] {"Abruzzo-L'Aquila", "Abruzzo-Chieti", "Abruzzo-Pescara", "Abruzzo-Teramo", "Basilicata-Potenza", "Basilicata-Matera", "Calabria-Reggio Calabria", "Calabria-Catanzaro", "Calabria-Crotone", "Calabria-Vibo Valentia Marina", "Calabria-Cosenza", "Campania-Napoli", "Campania-Avellino", "Campania-Caserta", "Campania-Benevento", "Campania-Salerno", "Emilia Romagna-Bologna", "Emilia Romagna-Reggio Emilia", "Emilia Romagna-Parma", "Emilia Romagna-Modena", "Emilia Romagna-Ferrara", "Emilia Romagna-Forl\u00EC Cesena", "Emilia Romagna-Piacenza", "Emilia Romagna-Ravenna", "Emilia Romagna-Rimini", "Friuli Venezia Giulia-Trieste", "Friuli Venezia Giulia-Gorizia", "Friuli Venezia Giulia-Pordenone", "Friuli Venezia Giulia-Udine", "Lazio-Roma", "Lazio-Latina", "Lazio-Frosinone", "Lazio-Viterbo", "Lazio-Rieti", "Lombardia-Milano", "Lombardia-Bergamo", "Lombardia-Brescia", "Lombardia-Como", "Lombardia-Cremona", "Lombardia-Mantova", "Lombardia-Monza e Brianza", "Lombardia-Pavia", "Lombardia-Sondrio", "Lombardia-Lodi", "Lombardia-Lecco", "Lombardia-Varese", "Marche-Ancona", "Marche-Ascoli Piceno", "Marche-Fermo", "Marche-Macerata", "Marche-Pesaro Urbino", "Molise-Campobasso", "Molise-Isernia", "Piemonte-Torino", "Piemonte-Asti", "Piemonte-Alessandria", "Piemonte-Cuneo", "Piemonte-Novara", "Piemonte-Vercelli", "Piemonte-Verbania", "Piemonte-Biella", "Valle D'Aosta-Aosta", "Puglia-Bari", "Puglia-Barletta-Andria-Trani", "Puglia-Brindisi", "Puglia-Foggia", "Puglia-Lecce", "Puglia-Taranto", "Sardegna-Cagliari", "Sardegna-Sassari", "Sardegna-Nuoro", "Sardegna-Oristano", "Sardegna-Carbonia Iglesias", "Sardegna-Medio Campidano", "Sardegna-Olbia Tempio", "Sardegna-Ogliastra", "Sicilia-Palermo", "Sicilia-Agrigento", "Sicilia-Caltanissetta", "Sicilia-Catania", "Sicilia-Enna", "Sicilia-Messina", "Sicilia-Ragusa", "Sicilia-Siracusa", "Sicilia-Trapani", "Toscana-Arezzo", "Toscana-Massa Carrara", "Toscana-Firenze", "Toscana-Livorno", "Toscana-Grosseto", "Toscana-Lucca", "Toscana-Pisa", "Toscana-Pistoia", "Toscana-Prato", "Toscana-Siena", "Trentino Alto Adige-Trento", "Trentino Alto Adige-Bolzano", "Umbria-Perugia", "Umbria-Terni", "Veneto-Venezia", "Veneto-Belluno", "Veneto-Padova", "Veneto-Rovigo", "Veneto-Treviso", "Veneto-Verona", "Veneto-Vicenza"}));
 		comboBoxRegione.setBackground(new Color(178, 34, 34));
 		comboBoxRegione.setBounds(41, 138, 188, 26);
 		panel.add(comboBoxRegione);

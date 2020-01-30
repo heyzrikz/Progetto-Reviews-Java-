@@ -1,13 +1,10 @@
-import java.awt.BorderLayout;
+
 import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,9 +16,9 @@ import javax.swing.ListSelectionModel;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JList;
 import javax.swing.JLabel;
 
+@SuppressWarnings("serial")
 public class MostraRecensioni extends JFrame {
 
 	private JPanel contentPane;
@@ -113,10 +110,11 @@ JButton btnBack = new JButton("\r\n");
 				"Codice", "Titolo", "Descrizione", "Voto"
 			}
 		) {
+			@SuppressWarnings("rawtypes")
 			Class[] columnTypes = new Class[] {
 				String.class, String.class, String.class, Float.class
 			};
-			public Class getColumnClass(int columnIndex) {
+			public Class<?> getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
 			boolean[] columnEditables = new boolean[] {

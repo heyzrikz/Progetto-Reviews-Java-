@@ -1,7 +1,6 @@
-import java.awt.EventQueue;
+
 
 import javax.swing.JDialog;
-import javax.swing.JTextPane;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
@@ -12,6 +11,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+@SuppressWarnings("serial")
 public class AttivitaAggiuntaRiuscita extends JDialog {
 
 	/**

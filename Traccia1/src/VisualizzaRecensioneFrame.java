@@ -1,5 +1,3 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,6 +16,7 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.BevelBorder;
 
+@SuppressWarnings("serial")
 public class VisualizzaRecensioneFrame extends JFrame {
 
 	private JPanel contentPane;

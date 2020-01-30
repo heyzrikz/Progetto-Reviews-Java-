@@ -1,11 +1,7 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.TitledBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
@@ -13,10 +9,10 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTree;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
+@SuppressWarnings("serial")
 public class MenuPrincipaleUtente extends JFrame {
 
 	private JPanel contentPane;

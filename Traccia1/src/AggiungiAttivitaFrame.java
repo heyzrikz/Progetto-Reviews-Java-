@@ -1,5 +1,5 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -14,13 +14,13 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
-import javax.swing.DropMode;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextArea;
 import javax.swing.JSeparator;
 import javax.swing.border.BevelBorder;
 
+@SuppressWarnings("serial")
 public class AggiungiAttivitaFrame extends JFrame {
 
 	private JPanel contentPane;
@@ -124,7 +124,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 		
 		JComboBox<String> comboBoxPosizione = new JComboBox<String>();
 		comboBoxPosizione.setLightWeightPopupEnabled(false);
-		comboBoxPosizione.setModel(new DefaultComboBoxModel(new String[] {"Abruzzo-L'Aquila", "Abruzzo-Chieti", "Abruzzo-Pescara", "Abruzzo-Teramo", "Basilicata-Potenza", "Basilicata-Matera", "Calabria-Reggio Calabria", "Calabria-Catanzaro", "Calabria-Crotone", "Calabria-Vibo Valentia Marina", "Calabria-Cosenza", "Campania-Napoli", "Campania-Avellino", "Campania-Caserta", "Campania-Benevento", "Campania-Salerno", "Emilia Romagna-Bologna", "Emilia Romagna-Reggio Emilia", "Emilia Romagna-Parma", "Emilia Romagna-Modena", "Emilia Romagna-Ferrara", "Emilia Romagna-Forl\u00EC Cesena", "Emilia Romagna-Piacenza", "Emilia Romagna-Ravenna", "Emilia Romagna-Rimini", "Friuli Venezia Giulia-Trieste", "Friuli Venezia Giulia-Gorizia", "Friuli Venezia Giulia-Pordenone", "Friuli Venezia Giulia-Udine", "Lazio-Roma", "Lazio-Latina", "Lazio-Frosinone", "Lazio-Viterbo", "Lazio-Rieti", "Lombardia-Milano", "Lombardia-Bergamo", "Lombardia-Brescia", "Lombardia-Como", "Lombardia-Cremona", "Lombardia-Mantova", "Lombardia-Monza e Brianza", "Lombardia-Pavia", "Lombardia-Sondrio", "Lombardia-Lodi", "Lombardia-Lecco", "Lombardia-Varese", "Marche-Ancona", "Marche-Ascoli Piceno", "Marche-Fermo", "Marche-Macerata", "Marche-Pesaro Urbino", "Molise-Campobasso", "Molise-Isernia", "Piemonte-Torino", "Piemonte-Asti", "Piemonte-Alessandria", "Piemonte-Cuneo", "Piemonte-Novara", "Piemonte-Vercelli", "Piemonte-Verbania", "Piemonte-Biella", "Valle D'Aosta-Aosta", "Puglia-Bari", "Puglia-Barletta-Andria-Trani", "Puglia-Brindisi", "Puglia-Foggia", "Puglia-Lecce", "Puglia-Taranto", "Sardegna-Cagliari", "Sardegna-Sassari", "Sardegna-Nuoro", "Sardegna-Oristano", "Sardegna-Carbonia Iglesias", "Sardegna-Medio Campidano", "Sardegna-Olbia Tempio", "Sardegna-Ogliastra", "Sicilia-Palermo", "Sicilia-Agrigento", "Sicilia-Caltanissetta", "Sicilia-Catania", "Sicilia-Enna", "Sicilia-Messina", "Sicilia-Ragusa", "Sicilia-Siracusa", "Sicilia-Trapani", "Toscana-Arezzo", "Toscana-Massa Carrara", "Toscana-Firenze", "Toscana-Livorno", "Toscana-Grosseto", "Toscana-Lucca", "Toscana-Pisa", "Toscana-Pistoia", "Toscana-Prato", "Toscana-Siena", "Trentino Alto Adige-Trento", "Trentino Alto Adige-Bolzano", "Umbria-Perugia", "Umbria-Terni", "Veneto-Venezia", "Veneto-Belluno", "Veneto-Padova", "Veneto-Rovigo", "Veneto-Treviso", "Veneto-Verona", "Veneto-Vicenza"}));
+		comboBoxPosizione.setModel(new DefaultComboBoxModel<String>(new String[] {"Abruzzo-L'Aquila", "Abruzzo-Chieti", "Abruzzo-Pescara", "Abruzzo-Teramo", "Basilicata-Potenza", "Basilicata-Matera", "Calabria-Reggio Calabria", "Calabria-Catanzaro", "Calabria-Crotone", "Calabria-Vibo Valentia Marina", "Calabria-Cosenza", "Campania-Napoli", "Campania-Avellino", "Campania-Caserta", "Campania-Benevento", "Campania-Salerno", "Emilia Romagna-Bologna", "Emilia Romagna-Reggio Emilia", "Emilia Romagna-Parma", "Emilia Romagna-Modena", "Emilia Romagna-Ferrara", "Emilia Romagna-Forl\u00EC Cesena", "Emilia Romagna-Piacenza", "Emilia Romagna-Ravenna", "Emilia Romagna-Rimini", "Friuli Venezia Giulia-Trieste", "Friuli Venezia Giulia-Gorizia", "Friuli Venezia Giulia-Pordenone", "Friuli Venezia Giulia-Udine", "Lazio-Roma", "Lazio-Latina", "Lazio-Frosinone", "Lazio-Viterbo", "Lazio-Rieti", "Lombardia-Milano", "Lombardia-Bergamo", "Lombardia-Brescia", "Lombardia-Como", "Lombardia-Cremona", "Lombardia-Mantova", "Lombardia-Monza e Brianza", "Lombardia-Pavia", "Lombardia-Sondrio", "Lombardia-Lodi", "Lombardia-Lecco", "Lombardia-Varese", "Marche-Ancona", "Marche-Ascoli Piceno", "Marche-Fermo", "Marche-Macerata", "Marche-Pesaro Urbino", "Molise-Campobasso", "Molise-Isernia", "Piemonte-Torino", "Piemonte-Asti", "Piemonte-Alessandria", "Piemonte-Cuneo", "Piemonte-Novara", "Piemonte-Vercelli", "Piemonte-Verbania", "Piemonte-Biella", "Valle D'Aosta-Aosta", "Puglia-Bari", "Puglia-Barletta-Andria-Trani", "Puglia-Brindisi", "Puglia-Foggia", "Puglia-Lecce", "Puglia-Taranto", "Sardegna-Cagliari", "Sardegna-Sassari", "Sardegna-Nuoro", "Sardegna-Oristano", "Sardegna-Carbonia Iglesias", "Sardegna-Medio Campidano", "Sardegna-Olbia Tempio", "Sardegna-Ogliastra", "Sicilia-Palermo", "Sicilia-Agrigento", "Sicilia-Caltanissetta", "Sicilia-Catania", "Sicilia-Enna", "Sicilia-Messina", "Sicilia-Ragusa", "Sicilia-Siracusa", "Sicilia-Trapani", "Toscana-Arezzo", "Toscana-Massa Carrara", "Toscana-Firenze", "Toscana-Livorno", "Toscana-Grosseto", "Toscana-Lucca", "Toscana-Pisa", "Toscana-Pistoia", "Toscana-Prato", "Toscana-Siena", "Trentino Alto Adige-Trento", "Trentino Alto Adige-Bolzano", "Umbria-Perugia", "Umbria-Terni", "Veneto-Venezia", "Veneto-Belluno", "Veneto-Padova", "Veneto-Rovigo", "Veneto-Treviso", "Veneto-Verona", "Veneto-Vicenza"}));
 		comboBoxPosizione.setBackground(new Color(178, 34, 34));
 		comboBoxPosizione.setForeground(new Color(255, 165, 0));
 		comboBoxPosizione.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
@@ -176,7 +176,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 		panel.add(lblCategoria);
 		
 		JComboBox<String> comboBoxRistorante = new JComboBox<String>();
-		comboBoxRistorante.setModel(new DefaultComboBoxModel(new String[] {"Cucina locale: Italiana", "Pizza", "Pesce", "Giapponese", "Steakhouse", "Caff\u00E8", "Cinese", "StreetFood"}));
+		comboBoxRistorante.setModel(new DefaultComboBoxModel<String>(new String[] {"Cucina locale: Italiana", "Pizza", "Pesce", "Giapponese", "Steakhouse", "Caff\u00E8", "Cinese", "StreetFood"}));
 		comboBoxRistorante.setForeground(new Color(255, 165, 0));
 		comboBoxRistorante.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		comboBoxRistorante.setBorder(null);
@@ -196,7 +196,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 		panel.add(comboBoxAlloggio);
 		
 		JComboBox<String> comboBoxAttrazione = new JComboBox<String>();
-		comboBoxAttrazione.setModel(new DefaultComboBoxModel(new String[] {"Museo", "Tour", "Teatro", "Cinema", "Parco Divertimenti", "Lido"}));
+		comboBoxAttrazione.setModel(new DefaultComboBoxModel<String>(new String[] {"Museo", "Tour", "Teatro", "Cinema", "Parco Divertimenti", "Lido"}));
 		comboBoxAttrazione.setForeground(new Color(255, 165, 0));
 		comboBoxAttrazione.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		comboBoxAttrazione.setBorder(null);
@@ -206,7 +206,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 		panel.add(comboBoxAttrazione);
 		
 		JComboBox<String> comboBoxRistorante_2 = new JComboBox<String>();
-		comboBoxRistorante_2.setModel(new DefaultComboBoxModel(new String[] {"", "Cucina locale: Italiana", "Pizza", "Pesce", "Giapponese", "Steakhouse", "Caff\u00E8", "Cinese", "StreetFood"}));
+		comboBoxRistorante_2.setModel(new DefaultComboBoxModel<String>(new String[] {"", "Cucina locale: Italiana", "Pizza", "Pesce", "Giapponese", "Steakhouse", "Caff\u00E8", "Cinese", "StreetFood"}));
 		comboBoxRistorante_2.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		comboBoxRistorante_2.setForeground(new Color(255, 165, 0));
 		comboBoxRistorante_2.setBackground(new Color(178, 34, 34));
@@ -215,7 +215,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 		panel.add(comboBoxRistorante_2);
 		
 		JComboBox<String> comboBoxAlloggio_2 = new JComboBox<String>();
-		comboBoxAlloggio_2.setModel(new DefaultComboBoxModel(new String[] {"", "Hotel", "B&B", "Ostello"}));
+		comboBoxAlloggio_2.setModel(new DefaultComboBoxModel<String>(new String[] {"", "Hotel", "B&B", "Ostello"}));
 		comboBoxAlloggio_2.setForeground(new Color(255, 165, 0));
 		comboBoxAlloggio_2.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		comboBoxAlloggio_2.setVisible(false);
@@ -224,7 +224,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 		panel.add(comboBoxAlloggio_2);
 		
 		JComboBox<String> comboBoxAttrazione_2 = new JComboBox<String>();
-		comboBoxAttrazione_2.setModel(new DefaultComboBoxModel(new String[] {"", "Museo", "Tour", "Teatro", "Cinema", "Parco Divertimenti", "Lido"}));
+		comboBoxAttrazione_2.setModel(new DefaultComboBoxModel<String>(new String[] {"", "Museo", "Tour", "Teatro", "Cinema", "Parco Divertimenti", "Lido"}));
 		comboBoxAttrazione_2.setForeground(new Color(255, 165, 0));
 		comboBoxAttrazione_2.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		comboBoxAttrazione_2.setVisible(false);
@@ -261,7 +261,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 					}
 			}
 		});
-		comboBoxCategoria.setModel(new DefaultComboBoxModel(new String[] {"Ristorante", "Alloggio", "Attrazione"}));
+		comboBoxCategoria.setModel(new DefaultComboBoxModel<String>(new String[] {"Ristorante", "Alloggio", "Attrazione"}));
 		comboBoxCategoria.setForeground(new Color(255, 165, 0));
 		comboBoxCategoria.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		comboBoxCategoria.setBorder(null);

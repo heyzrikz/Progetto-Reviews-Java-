@@ -1,9 +1,6 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JTextField;
 import java.awt.Font;
@@ -19,6 +16,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+@SuppressWarnings("serial")
 public class ModificaAttivita extends JFrame {
 
 	private JPanel contentPane;
@@ -119,7 +117,7 @@ public class ModificaAttivita extends JFrame {
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				controller.setVisibleMostraProprieAttivita(true);
+				controller.setVisibleMenuPrincipaleModeratore(true);
 			}
 		});
 		btnBack.setIcon(new ImageIcon(AggiungiRecensioneFrame.class.getResource("/Images/undo.png")));
@@ -135,7 +133,7 @@ public class ModificaAttivita extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			if(controller.gestisciEccezioniModificaAttivita(txtNomeAttivita.getText(), txtViaAttivita.getText(), txtDescrizioneAttivita.getText())==true){
 				controller.modificaAttivitaSelezionata(txtNomeAttivita.getText(), txtViaAttivita.getText(), txtDescrizioneAttivita.getText());
-				int dialog = JOptionPane.showConfirmDialog(null,"Modifica effettuata con successo","Attenzione",JOptionPane.PLAIN_MESSAGE,JOptionPane.PLAIN_MESSAGE);
+			  JOptionPane.showConfirmDialog(null,"Modifica effettuata con successo","Attenzione",JOptionPane.PLAIN_MESSAGE,JOptionPane.PLAIN_MESSAGE);
 			}
 			}
 		});

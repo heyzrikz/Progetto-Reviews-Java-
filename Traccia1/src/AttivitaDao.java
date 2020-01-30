@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,21 +11,6 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 public class AttivitaDao extends ConnessioneDao{
-	/*public Connection getConnection() throws Exception{
-		try{
-			String Driver="org.postgresql.Driver";
-			String Url="jdbc:postgresql://localhost:5432/Reviews";
-			String User="postgres";
-			String Password="Ricardinho7";
-		Class.forName(Driver);
-		Connection con = DriverManager.getConnection(Url,User,Password);
-		System.out.println("Connected");
-		return con;
-		
-		}catch(Exception e){
-			System.err.println("Classe non trovata");}
-		return null;
-	   }*/
 	
  public byte[] getImmagineDb(String codice_attivita_cercata) throws Exception{
 	Connection con=getConnection();

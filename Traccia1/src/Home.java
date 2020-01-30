@@ -1,5 +1,4 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -14,18 +13,13 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
 import javax.swing.JPasswordField;
-import javax.swing.SwingConstants;
-import javax.swing.UIManager;
-import javax.swing.border.BevelBorder;
-import java.awt.SystemColor;
-import javax.swing.JScrollBar;
-import javax.swing.JSlider;
 import java.awt.Toolkit;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+@SuppressWarnings("serial")
 public class Home extends JFrame {
 
 	private JPanel contentPane;
@@ -131,6 +125,7 @@ public class Home extends JFrame {
 		
 		passwordField = new JPasswordField();
 		passwordField.addKeyListener(new KeyAdapter() {
+			@SuppressWarnings("deprecation")
 			@Override
 			public void keyPressed(KeyEvent arg0) {
 				if(arg0.getKeyCode()==KeyEvent.VK_ENTER){
