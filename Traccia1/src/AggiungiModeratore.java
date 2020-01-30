@@ -249,6 +249,7 @@ public class AggiungiModeratore extends JFrame {
 			System.out.println("oo: "+txtNome.getText());
 			controller.inserisciModeratore(txtId.getText(), txtNome.getText(), txtCognome.getText(),passwordField.getText());
 			lblModeratoreAggiunto.setVisible(true);
+			
 			controller.setDefaultAggiungiModeratoreFrame(txtNome, txtCognome, txtId, passwordField,lblIdAsterisco,lblNomeAsterisco,lblCognomeAsterisco,lblPasswordAsterisco,lblErroreMinPassword,lblErroreId,lblModeratoreAggiunto);
 			
 		}else lblErroreId.setVisible(true);
