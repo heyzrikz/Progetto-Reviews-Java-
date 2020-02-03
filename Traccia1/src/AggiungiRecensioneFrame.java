@@ -219,7 +219,7 @@ public class AggiungiRecensioneFrame extends JFrame {
 		
 		btnAggiungiRecensione.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(controller.gestisciAsterischiAggiungiRecensione(lblAsteriscoTitolo, lblAsteriscoRecensione, txtTitoloRecensione, txtRecensione)){
+				if(controller.gestisciEccezioniAggiungiRecensione(lblAsteriscoTitolo, lblAsteriscoRecensione, txtTitoloRecensione, txtRecensione)){
 					try {
 						if(controller.verificaAggiuntaRecensione()==true){
 							controller.inserisciRecensione(controller.generaCodiceRecensione(), txtTitoloRecensione.getText(), txtRecensione.getText(), (Integer)spinnerVoto.getValue());

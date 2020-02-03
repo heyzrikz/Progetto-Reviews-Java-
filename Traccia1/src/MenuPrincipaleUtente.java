@@ -72,7 +72,7 @@ public class MenuPrincipaleUtente extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnAggiungiRecensione.setBounds(69, 216, 558, 157);
+		btnAggiungiRecensione.setBounds(54, 394, 558, 157);
 		btnAggiungiRecensione.setFont(new Font("Trebuchet MS", Font.PLAIN, 16));
 		btnAggiungiRecensione.setBorder(null);
 		btnAggiungiRecensione.setIcon(new ImageIcon(MenuPrincipaleUtente.class.getResource("/Images/add_review.png")));
@@ -89,7 +89,7 @@ public class MenuPrincipaleUtente extends JFrame {
 			}
 		});
 		btnRicerca.setIcon(new ImageIcon(MenuPrincipaleUtente.class.getResource("/Images/search_icon.png")));
-		btnRicerca.setBounds(69, 441, 322, 157);
+		btnRicerca.setBounds(54, 190, 322, 157);
 		btnRicerca.setBorder(null);
 		btnRicerca.setOpaque(false);
 		btnRicerca.setContentAreaFilled(false);
@@ -126,13 +126,13 @@ public class MenuPrincipaleUtente extends JFrame {
 		JLabel lblAggiungiLaTua = new JLabel("Aggiungi la tua Recensione");
 		lblAggiungiLaTua.setForeground(new Color(255, 215, 0));
 		lblAggiungiLaTua.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
-		lblAggiungiLaTua.setBounds(237, 271, 390, 40);
+		lblAggiungiLaTua.setBounds(232, 447, 390, 40);
 		panel.add(lblAggiungiLaTua);
 		
 		JLabel lblDoveVuoiAndare = new JLabel("Ricerca");
 		lblDoveVuoiAndare.setForeground(new Color(255, 215, 0));
 		lblDoveVuoiAndare.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
-		lblDoveVuoiAndare.setBounds(237, 495, 345, 40);
+		lblDoveVuoiAndare.setBounds(232, 253, 123, 40);
 		panel.add(lblDoveVuoiAndare);
 	}
 }

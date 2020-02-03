@@ -324,7 +324,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
 				controller.setVisibleMenuPrincipaleProprietario(true);
-				controller.setDefaultTxtAggiungiAttivitaFrame(txtNomeAttivita, txtViaAttivita, txtDescrizioneAttivita,lblAsterisco_immagine);
+				controller.setDefaultAggiungiAttivitaFrame(txtNomeAttivita, txtViaAttivita, txtDescrizioneAttivita,lblAsterisco_immagine);
 			}
 		});
 		
@@ -395,10 +395,9 @@ public class AggiungiAttivitaFrame extends JFrame {
 			if(!sottocategoria_scelta.equals(sottocategoria_seconda_scelta)){
 				lblErroreCategoria.setVisible(false);
 			try {
-				controller.attivitaRegistrata(txtNomeAttivita.getText(), comboBoxPosizione.getSelectedItem().toString(), txtViaAttivita.getText(), comboBoxCategoria.getSelectedItem().toString(), sottocategoria_scelta, sottocategoria_seconda_scelta, txtDescrizioneAttivita.getText(),controller.generaCodiceAttivita());
-				if(controller.verificaPresenzaAttivita()==true){
-					controller.inserisciAttivitaDatabase();
-					controller.setDefaultTxtAggiungiAttivitaFrame(txtNomeAttivita, txtViaAttivita, txtDescrizioneAttivita,lblAsterisco_immagine);}
+				if(controller.verificaPresenzaAttivita(txtNomeAttivita.getText(),comboBoxPosizione.getSelectedItem().toString())==true){
+					controller.inserisciAttivitaDatabase(txtNomeAttivita.getText(),comboBoxPosizione.getSelectedItem().toString(),txtViaAttivita.getText(), comboBoxCategoria.getSelectedItem().toString(),sottocategoria_scelta,sottocategoria_seconda_scelta,txtDescrizioneAttivita.getText(),controller.generaCodiceAttivita());
+					controller.setDefaultAggiungiAttivitaFrame(txtNomeAttivita, txtViaAttivita, txtDescrizioneAttivita,lblAsterisco_immagine);}
 			}catch (Exception e1) {	
 				System.err.println("Errore verifica aggiunta attivita");}
 			}else 	lblErroreCategoria.setVisible(true);

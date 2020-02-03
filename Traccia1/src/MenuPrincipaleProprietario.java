@@ -49,7 +49,7 @@ public class MenuPrincipaleProprietario extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(128, 0, 0));
-		panel.setBounds(0, 0, 684, 928);
+		panel.setBounds(0, 0, 684, 944);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		

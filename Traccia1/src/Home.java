@@ -132,7 +132,7 @@ public class Home extends JFrame {
 					if(controller.gestisciEccezioniHome(lblUsernameAsterisco, lblPasswordAsterisco, textUsername, passwordField)==true){
 						try {
 							controller.setUtenteAcceduto(textUsername.getText(), passwordField.getText());
-							if(controller.CercaUtenteNelDatabase()==true){
+							if(controller.accedi()==true){
 								lblErroreLogin.setVisible(false);
 								controller.verificaTipologiaDiUtente();
 								setVisible(false);
@@ -175,7 +175,7 @@ public class Home extends JFrame {
 				if(controller.gestisciEccezioniHome(lblUsernameAsterisco, lblPasswordAsterisco, textUsername, passwordField)==true){
 					try {
 						controller.setUtenteAcceduto(textUsername.getText(), passwordField.getText());
-						if(controller.CercaUtenteNelDatabase()==true){
+						if(controller.accedi()==true){
 							lblErroreLogin.setVisible(false);
 							controller.verificaTipologiaDiUtente();
 							setVisible(false);

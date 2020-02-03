@@ -57,8 +57,8 @@ public class CercaRecensioneFrame extends JFrame {
 		
 		JLabel lblCercaSuReviews = new JLabel("CERCA SU REVIEWS");
 		lblCercaSuReviews.setForeground(new Color(255, 215, 0));
-		lblCercaSuReviews.setFont(new Font("Corbel Light", Font.BOLD, 30));
-		lblCercaSuReviews.setBounds(183, 26, 317, 46);
+		lblCercaSuReviews.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
+		lblCercaSuReviews.setBounds(195, 16, 273, 46);
 		contentPane.add(lblCercaSuReviews);
 		
 		JLabel lblCosaScegli = new JLabel("Cosa scegli ?");

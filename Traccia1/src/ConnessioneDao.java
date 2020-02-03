@@ -10,9 +10,7 @@ public class ConnessioneDao {
 			String Password="Ricardinho7";
 		Class.forName(Driver);
 		Connection con = DriverManager.getConnection(Url,User,Password);
-		System.out.println("Connected");
 		return con;
-		
 		}catch(Exception e){
 			System.err.println("Classe non trovata");}
 		return null;

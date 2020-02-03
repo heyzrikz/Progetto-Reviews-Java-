@@ -117,7 +117,7 @@ public class ModificaAttivita extends JFrame {
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				controller.setVisibleMenuPrincipaleModeratore(true);
+				controller.setVisibleMenuPrincipaleProprietario(true);
 			}
 		});
 		btnBack.setIcon(new ImageIcon(AggiungiRecensioneFrame.class.getResource("/Images/undo.png")));

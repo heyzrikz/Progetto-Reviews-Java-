@@ -76,10 +76,10 @@ public class CercaAttivitaFrame extends JFrame {
 		
 		JLabel lblNome = new JLabel("Nome");
 		lblNome.setVisible(false);
-		JLabel lblRegioneODestinazione = new JLabel("Regione");
+		JLabel lblRegioneODestinazione = new JLabel("Posizione");
 		lblRegioneODestinazione.setForeground(new Color(255, 215, 0));
 		lblRegioneODestinazione.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
-		lblRegioneODestinazione.setBounds(41, 103, 73, 29);
+		lblRegioneODestinazione.setBounds(41, 103, 85, 29);
 		panel.add(lblRegioneODestinazione);
 		
 		JComboBox<String> comboBoxCategoria = new JComboBox<String>();

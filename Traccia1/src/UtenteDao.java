@@ -4,23 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UtenteDao {
-	public Connection getConnection() throws Exception{
-		try{
-			String Driver="org.postgresql.Driver";
-			String Url="jdbc:postgresql://localhost:5432/Reviews";
-			String User="postgres";
-			String Password="Ricardinho7";
-		Class.forName(Driver);
-		Connection con = DriverManager.getConnection(Url,User,Password);
-		System.out.println("Connected");
-		return con;
-		
-		}catch(Exception e){
-			System.err.println("Classe non trovata");}
-		return null;
-	   }
-	
+public class UtenteDao extends ConnessioneDao {
+
 	public boolean verificaAccesso(String username,String password) throws Exception{
 		   Connection con=getConnection();
 		  try{ 
@@ -38,12 +23,12 @@ public class UtenteDao {
 	
 	public boolean verificaSeAccountProprietario(String username) throws Exception{
 		Connection con=getConnection();
-		String select="SELECT selected_moderatore FROM public.utente WHERE username=?";
+		String select="SELECT selected_proprietario FROM public.utente WHERE username=?";
 		PreparedStatement verificaAccount=con.prepareStatement(select);
 		verificaAccount.setString(1, username);
 		ResultSet rs=verificaAccount.executeQuery();
 		while(rs.next()){
-			if(rs.getBoolean("selected_moderatore")){
+			if(rs.getBoolean("selected_proprietario")){
 			return true;}
 		else return false;}
 		return false;}
@@ -51,7 +36,7 @@ public class UtenteDao {
 	public void inserisciUtenteDb(String nome,String cognome,String nick,String password,boolean moderatore) throws Exception{
 		   Connection con=getConnection();
 		   try{
-		PreparedStatement UpdateUtente=con.prepareStatement("INSERT INTO public.utente( nome_utente, cognome_utente, username, password_utente,selected_moderatore) VALUES (?, ?, ?, ?, ?);");
+		PreparedStatement UpdateUtente=con.prepareStatement("INSERT INTO public.utente( nome_utente, cognome_utente, username, password_utente,selected_proprietario) VALUES (?, ?, ?, ?, ?);");
 		UpdateUtente.setString(1, nome);
 		UpdateUtente.setString(2, cognome);
 		UpdateUtente.setString(3, nick);

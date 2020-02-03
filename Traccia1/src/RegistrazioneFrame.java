@@ -68,7 +68,7 @@ public class RegistrazioneFrame extends JFrame {
 		JLabel lblNewLabel = new JLabel("REGISTRAZIONE");
 		lblNewLabel.setFont(new Font("Trebuchet MS", Font.BOLD, 29));
 		lblNewLabel.setForeground(new Color(255, 215, 0));
-		lblNewLabel.setBounds(109, 28, 225, 35);
+		lblNewLabel.setBounds(123, 28, 225, 35);
 		panel.add(lblNewLabel);
 		
 		JLabel lblNome = new JLabel("Nome");
@@ -279,18 +279,18 @@ public class RegistrazioneFrame extends JFrame {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if(controller.gestisciEccezioniRegistrazione(lblNomeAsterisco, lblCognomeAsterisco, lblUsernameAsterisco, lblPasswordAsterisco, lblConfermaPasswordAsterisco, txtNome, txtCognome, txtUsername, passwordField, conferma_passwordField, lblErrorePassword,lblErroreMinPassword)==true){
-			        controller.setUtenteRegistrato(txtNome.getText(), txtCognome.getText(), txtUsername.getText(), passwordField.getText(),rdbtnProprietario.isSelected());
 					try {
-						if(controller.verificaUsernameInUso()==true){
+						if(controller.verificaUsernameInUso(txtUsername.getText())==true){
 							lblErroreUsername.setVisible(false);
-							controller.inserisciUtente();
+							controller.inserisciUtente(txtNome.getText(),txtCognome.getText(),txtUsername.getText(), passwordField.getText(),rdbtnProprietario.isSelected());
 							controller.setVisibleHome(true);
-							controller.setDefaultRegistrazioneFrame(txtNome, txtCognome, txtUsername, passwordField, conferma_passwordField,null,null,null,null,null,null,null);
+							controller.setDefaultRegistrazioneFrame(txtNome, txtCognome, txtUsername, passwordField, conferma_passwordField,lblNomeAsterisco, lblCognomeAsterisco, lblUsernameAsterisco, lblPasswordAsterisco, lblConfermaPasswordAsterisco,lblErrorePassword,lblErroreMinPassword);
 							setVisible(false);
 						}else{
 							lblErroreUsername.setVisible(true);
 							lblErroreMinPassword.setVisible(false);}}
 					 catch (Exception e1) {
+						 System.err.println(e1);
 						System.err.println("Errore inserimento utente db");
 					}}}});
 		

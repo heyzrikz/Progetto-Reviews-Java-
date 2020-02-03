@@ -21,8 +21,6 @@ import javax.swing.table.DefaultTableModel;
 public class Controller{
       //VARIABILI
 	Utente user_loggato=new Utente();
-	Utente user_registrato=new Utente();
-	Attivita attivita_registrata=new Attivita();
 	Attivita attivita_cercata=new Attivita();
 	Attivita attivita_propria_selezionata=new Attivita();
 	Recensione recensione_cercata=new Recensione();
@@ -178,19 +176,25 @@ public class Controller{
 	 add_admin.setVisible(visibilità);
  }
  
+ //Setta l'utente che ha effettuato l'accesso
  public void setUtenteAcceduto(String nickname , String password){
 	 user.setNickname(nickname);
 	 user.setPassword(password);
 	 user_loggato=user;
  }
- public void setUtenteRegistrato(String nome , String cognome , String nickname , String password, boolean moderatore){
-	 user.setNome(nome);
-	 user.setCognome(cognome);
-	 user.setNickname(nickname);
-	 user.setPassword(password);
-	 user.setModeratore(moderatore);
-	 user_registrato=user;
- }
+ 
+ @SuppressWarnings("deprecation")
+ public boolean gestisciEccezioniHome(JLabel asterisco_username , JLabel asterisco_password , JTextField username , JPasswordField password){
+ 		if(username.getText().length()==0){
+ 			asterisco_username.setVisible(true);
+ 		}else asterisco_username.setVisible(false);
+ 		if(password.getText().length()==0){
+ 			asterisco_password.setVisible(true);
+ 		}else asterisco_password.setVisible(false);
+ 		if(username.getText().length()!=0 && password.getText().length()!=0 ){
+ 			return true;
+ 		}else return false;}
+ 
  @SuppressWarnings("deprecation")
 public boolean gestisciEccezioniRegistrazione(JLabel asterisco_nome , JLabel asterisco_cognome , JLabel asterisco_username,JLabel asterisco_password ,JLabel asterisco_conf_password , JTextField nome,JTextField cognome,JTextField username, JPasswordField password,JPasswordField conf_password,JLabel err_password_diverse,JLabel err_min_password){
 		if(nome.getText().length()==0){
@@ -215,8 +219,6 @@ public boolean gestisciEccezioniRegistrazione(JLabel asterisco_nome , JLabel ast
 		if(nome.getText().length()!=0 && cognome.getText().length()!=0 && username.getText().length()!=0 && password.getText().length()!=0 && conf_password.getText().length()!=0 && minCaratteri(password,err_min_password)==true){
 			return true;
 		}else return false;
-	
-
 	}
  
  @SuppressWarnings("deprecation")
@@ -235,10 +237,21 @@ public boolean gestisciEccezioniAggiungiModeratore(JLabel asterisco_nome , JLabe
 		}else asterisco_password.setVisible(false);
 		if(nome.getText().length()!=0 && cognome.getText().length()!=0 && username.getText().length()!=0 && password.getText().length()!=0 &&  minCaratteri(password,err_min_password)==true){
 			return true;
-		}else return false;
-	
+		}else return false;}
+ 
+ @SuppressWarnings("deprecation")
+ public boolean gestisciEccezioniLoginModeratore(JLabel asterisco_username , JLabel asterisco_password , JTextField username , JPasswordField password){
+ 		if(username.getText().length()==0){
+ 			asterisco_username.setVisible(true);
+ 		}else asterisco_username.setVisible(false);
+ 		if(password.getText().length()==0){
+ 			asterisco_password.setVisible(true);
+ 		}else asterisco_password.setVisible(false);
+ 		if(username.getText().length()!=0 && password.getText().length()!=0 ){
+ 			return true;
+ 		}else return false;
 
-	}
+ 	}
  @SuppressWarnings("deprecation")
 public boolean minCaratteri(JPasswordField password,JLabel errore_min_password){
 	 if(password.getText().length()<8){
@@ -249,55 +262,6 @@ public boolean minCaratteri(JPasswordField password,JLabel errore_min_password){
 		 return true;
  }
  
- public void setDefaultRegistrazioneFrame( JTextField nome,JTextField cognome,JTextField username, JPasswordField password,JPasswordField conf_password,JLabel asterisco_nick,JLabel asterisco_nome,JLabel asterisco_cognome, JLabel asterisco_password,JLabel asterisco_conferma_password,JLabel errore_nick,JLabel errore_min_password){
-	 nome.setText("");
-	 cognome.setText("");
-	 username.setText("");
-	 password.setText("");
-	 conf_password.setText("");
-     asterisco_nick.setVisible(false);	
-     asterisco_nome.setVisible(false);
-     asterisco_cognome.setVisible(false);
-     asterisco_password.setVisible(false);	
-     asterisco_conferma_password.setVisible(false);
-     errore_nick.setVisible(false);
-     errore_min_password.setVisible(false);
- }
- 
- public void setDefaultAggiungiModeratoreFrame( JTextField nome,JTextField cognome,JTextField username, JPasswordField password,JLabel asterisco_nick,JLabel asterisco_nome,JLabel asterisco_cognome, JLabel asterisco_password,JLabel errore_nick,JLabel errore_min_password,JLabel moderatore_aggiunto){
-	 nome.setText("");
-	 cognome.setText("");
-	 username.setText("");
-	 password.setText("");
-     asterisco_nick.setVisible(false);	
-     asterisco_nome.setVisible(false);
-     asterisco_cognome.setVisible(false);
-     asterisco_password.setVisible(false);	
-     errore_nick.setVisible(false);
-     errore_min_password.setVisible(false);
-     moderatore_aggiunto.setVisible(false);
- }
- 
- 
- 
-@SuppressWarnings("deprecation")
-public boolean gestisciEccezioniHome(JLabel asterisco_username , JLabel asterisco_password , JTextField username , JPasswordField password){
-		if(username.getText().length()==0){
-			asterisco_username.setVisible(true);
-		}else asterisco_username.setVisible(false);
-		if(password.getText().length()==0){
-			asterisco_password.setVisible(true);
-		}else asterisco_password.setVisible(false);
-		if(username.getText().length()!=0 && password.getText().length()!=0 ){
-			return true;
-		}else return false;
-
-	}
- 
- public void setDefaultHome(JTextField username , JPasswordField password){
-	 username.setText("Inserisci Username");
-	 password.setText("");
- }
  
  public boolean gestisciEccezioniAggiungiAttivita(JLabel asterisco_nome ,JTextField nome_attivita, JLabel asterisco_via ,JTextField via_attivita, JLabel asterisco_descrizione,JLabel asterisco_immagine,JTextArea descrizione_attivita){
 	 if(!immagine_scelta.equals("null")){
@@ -314,24 +278,43 @@ public boolean gestisciEccezioniHome(JLabel asterisco_username , JLabel asterisc
 		}else asterisco_descrizione.setVisible(false);
 		if(nome_attivita.getText().length()!=0 && via_attivita.getText().length()!=0 && descrizione_attivita.getText().length()!=0 && !immagine_scelta.equals("null")){
 			return true;
-		}else return false;
-
-}
+		}else return false;}
  
- public boolean verificaUsernameInUso() throws Exception{
-	 if(dao_utente.verificaInserimentoDbUtente(user_registrato.getNickname())){
+ public boolean gestisciEccezioniAggiungiRecensione(JLabel asterisco_titolo , JLabel asterisco_recensione , JTextField titolo , JTextArea recensione){
+		if(titolo.getText().length()==0){
+			asterisco_titolo.setVisible(true);
+		}else asterisco_titolo.setVisible(false);
+		if(recensione.getText().length()==0){
+			asterisco_recensione.setVisible(true);
+		}else asterisco_recensione.setVisible(false);
+		if(titolo.getText().length()!=0 && recensione.getText().length()!=0 ){
+			return true;
+		}else return false;	}
+ 
+ public boolean gestisciEccezioniModificaAttivita(String nome_modificato,String via_modificata,String descrizione_modificata){
+	 try {if(nome_modificato.length()==0 || via_modificata.length()==0 || descrizione_modificata.length()==0){
+			return false;}
+			if(dao_attivita.verificaModificaAttivita(nome_modificato, attivita_propria_selezionata.getPosizione_attivita(),attivita_propria_selezionata.getCodice_attivita())){
+				return true; }else return false;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;}}
+ 
+ //controllo se è già presente un profilo con lo stesso username
+ public boolean verificaUsernameInUso(String username) throws Exception{
+	 if(dao_utente.verificaInserimentoDbUtente(username)){
 		 return true;
-	 }else return false;
- }
+	 }else return false;}
  
- public void inserisciUtente() throws Exception{
-		dao_utente.inserisciUtenteDb(user_registrato.getNome(), user_registrato.getCognome(), user_registrato.getNickname(), user_registrato.getPassword(), user_registrato.isModeratore());
+ public void inserisciUtente(String nome, String cognome, String nickname, String password,boolean moderatore) throws Exception{
+		dao_utente.inserisciUtenteDb(nome, cognome, nickname , password, moderatore);
 	}
- public boolean CercaUtenteNelDatabase() throws Exception{
+ public boolean accedi() throws Exception{
 	 if(dao_utente.verificaAccesso(user_loggato.getNickname(), user_loggato.getPassword())==true){
 		 return true;
 	 }else return false;
  }
+ //verifica se è un profilo di tipo proprietario di attività o un utente base
  public void verificaTipologiaDiUtente() throws Exception{
   if(dao_utente.verificaSeAccountProprietario(user_loggato.getNickname())==true){	
 	  setVisibleMenuPrincipaleProprietario(true);
@@ -339,24 +322,25 @@ public boolean gestisciEccezioniHome(JLabel asterisco_username , JLabel asterisc
 	  setVisibleMenuPrincipaleUtente(true);}
  }
 
-	 
- 
- 
-
-
  public String generaCodiceAttivita() throws NumberFormatException, Exception{
 	 count_codice=Integer.parseInt(dao_attivita.getCodiceAttivitaDb());
 	 count_codice=count_codice+1;
+	 String codice_generato=String.valueOf(count_codice);
+	 return codice_generato;}
+ 
+ public String generaCodiceRecensione() throws NumberFormatException, Exception{
+	 count_codice=Integer.parseInt(dao_recensione.getCodiceRecensioneDb());
+	 count_codice=count_codice+1;
 	 String contatore_stringa=String.valueOf(count_codice);
-	 return contatore_stringa;
-	
- }
+	 return contatore_stringa;}
+
+public String generaCodiceSegnalazione() throws NumberFormatException, Exception{
+	 count_codice=Integer.parseInt(dao_segnalazione.getCodiceSegnalazioneDb());
+	 count_codice=count_codice+1;
+	 String contatore_stringa=String.valueOf(count_codice);
+	 return contatore_stringa;}
  
- 
- 
- 
- 
- 
+//metodo che gestisce la sottocategoria e la seconda sottocategoria selezionata
 public String sceltaSottocategoria(JComboBox<String> categoria , JComboBox<String> ristorante , JComboBox<String> alloggio , JComboBox<String> attrazione){
 	String sottocategoria="";
 	if(categoria.getSelectedIndex()==0){
@@ -369,23 +353,11 @@ public String sceltaSottocategoria(JComboBox<String> categoria , JComboBox<Strin
 		sottocategoria=attrazione.getSelectedItem().toString();
 		return sottocategoria;
 	}
-	return sottocategoria;
-	
-}
-public void attivitaRegistrata(String nome_attivita , String posizione_attivita , String via_attivita , String categoria_attivita, String sottocategoria_attivita, String sottocategoria_attivita_2 , String descrizione_attivita,String codice_attivita){
-	 activity.setNome_attivita(nome_attivita);
-	 activity.setPosizione_attivita(posizione_attivita);
-	 activity.setVia_attivita(via_attivita);
-	 activity.setCategoria_attivita(categoria_attivita);
-	 activity.setSottocategoria_attivita(sottocategoria_attivita);
-	 activity.setSottocategoria_attivita_2(sottocategoria_attivita_2);
-	 activity.setDescrizione_attivita(descrizione_attivita);
-	 activity.setCodice_attivita(codice_attivita);
-	 attivita_registrata=activity;
-}
+	return sottocategoria;}
 
-public boolean verificaPresenzaAttivita() throws Exception{
-	if(dao_attivita.verificaAggiuntaAttivita(attivita_registrata.getNome_attivita(),attivita_registrata.getPosizione_attivita())==false){
+//verifica se è presente nel database un'attività con lo stesso nome che si trova nella medesima posizione
+public boolean verificaPresenzaAttivita(String nome_attività,String posizione_attività) throws Exception{
+	if(dao_attivita.verificaAggiuntaAttivita(nome_attività ,posizione_attività)==false){
 		setVisibleAttivitaAggiuntaFallita(true);
 		setVisibleAggiungiAttivitaFrame(false);
 		setVisibleAttivitaAggiuntaRiuscita(false);
@@ -394,33 +366,59 @@ public boolean verificaPresenzaAttivita() throws Exception{
 		setVisibleAttivitaAggiuntaFallita(false);
 		setVisibleAggiungiAttivitaFrame(false);
 		setVisibleAttivitaAggiuntaRiuscita(true);
-		return true;}
- }
+		return true;}}
 
+public void inserisciAttivitaDatabase(String nome_attività,String posizione_attività,String via_attività, String categoria_attività,String sottocategoria_attività,String seconda_sottocategoria_attività,String descrizione_attività,String codice_attività) throws Exception{
+	dao_attivita.InserisciAttivita(nome_attività, posizione_attività, via_attività, categoria_attività , sottocategoria_attività, seconda_sottocategoria_attività, descrizione_attività, codice_attività, user_loggato.getNickname(),immagine_file);}
 
-
-public void inserisciAttivitaDatabase() throws Exception{
-	
-	dao_attivita.InserisciAttivita(attivita_registrata.getNome_attivita(), attivita_registrata.getPosizione_attivita(), attivita_registrata.getVia_attivita(), attivita_registrata.getCategoria_attivita(), attivita_registrata.getSottocategoria_attivita(), attivita_registrata.getSottocategoria_attivita_2(), attivita_registrata.getDescrizione_attivita(), attivita_registrata.getCodice_attivita(), user_loggato.getNickname(),immagine_file);
-	
-}
-
-public void setDefaultTxtAggiungiAttivitaFrame(JTextField nome_attivita , JTextField via_attivita , JTextArea descrizione_attivita,JLabel asterisco_immagine){
+public void setDefaultAggiungiAttivitaFrame(JTextField nome_attivita , JTextField via_attivita , JTextArea descrizione_attivita,JLabel asterisco_immagine){
 	nome_attivita.setText("Inserisci Nome Attivit\u00E0");
 	via_attivita.setText("Inserisci Citt\u00E0 e Via Attivit\u00E0");
 	descrizione_attivita.setText("Inserisci qui la descrizione della tu\u00E0 attivit\u00E0...");
 	asterisco_immagine.setVisible(false);
 	
 }
+
+public void setDefaultRegistrazioneFrame( JTextField nome,JTextField cognome,JTextField username, JPasswordField password,JPasswordField conf_password,JLabel asterisco_nick,JLabel asterisco_nome,JLabel asterisco_cognome, JLabel asterisco_password,JLabel asterisco_conferma_password,JLabel errore_nick,JLabel errore_min_password){
+	 nome.setText("");
+	 cognome.setText("");
+	 username.setText("");
+	 password.setText("");
+	 conf_password.setText("");
+    asterisco_nick.setVisible(false);	
+    asterisco_nome.setVisible(false);
+    asterisco_cognome.setVisible(false);
+    asterisco_password.setVisible(false);	
+    asterisco_conferma_password.setVisible(false);
+    errore_nick.setVisible(false);
+    errore_min_password.setVisible(false);
+}
+
+public void setDefaultAggiungiModeratoreFrame( JTextField nome,JTextField cognome,JTextField username, JPasswordField password,JLabel asterisco_nick,JLabel asterisco_nome,JLabel asterisco_cognome, JLabel asterisco_password,JLabel errore_nick,JLabel errore_min_password,JLabel moderatore_aggiunto){
+	 nome.setText("");
+	 cognome.setText("");
+	 username.setText("");
+	 password.setText("");
+    asterisco_nick.setVisible(false);	
+    asterisco_nome.setVisible(false);
+    asterisco_cognome.setVisible(false);
+    asterisco_password.setVisible(false);	
+    errore_nick.setVisible(false);
+    errore_min_password.setVisible(false);
+    moderatore_aggiunto.setVisible(false);
+}
+
+public void setDefaultHome(JTextField username , JPasswordField password){
+	 username.setText("Inserisci Username");
+	 password.setText("");}
+
 public ArrayList<Attivita> getElencoAttivita(String posizione , String categoria) throws Exception{
 	elenco_attivita.clear();
 	elenco_attivita.addAll(dao_attivita.getElencoAttivitaDb(posizione, categoria));
-	return elenco_attivita;
-	
-}
+	return elenco_attivita;}
+
 public void cercaAttivita(String posizione , String categoria , String nome) throws Exception{
-	attivita_cercata=dao_attivita.cercaAttivitaDb(posizione, categoria, nome);
-}
+	attivita_cercata=dao_attivita.cercaAttivitaDb(posizione, categoria, nome);}
 
 public void setLabelAggiungiRecensioneFrame(JLabel nome,JLabel posizione , JLabel via, JLabel sottocategoria,JLabel sottocategoria_seconda,JTextArea descrizione,JLabel immagine){
 	 lblNomeAttivitaScelta=nome;
@@ -429,8 +427,8 @@ public void setLabelAggiungiRecensioneFrame(JLabel nome,JLabel posizione , JLabe
      lblSottocategoriaAttivita=sottocategoria;
      lblSottocategoria_2_Attivita=sottocategoria_seconda;
     txtDescrizione=descrizione;
-    lblImmagineAttivita=immagine;
-}
+    lblImmagineAttivita=immagine;}
+
 public void getLabelAttivita(){
 	lblNomeAttivitaScelta.setText(attivita_cercata.getNome_attivita());
 			lblPosizioneAttivita.setText(attivita_cercata.getPosizione_attivita());
@@ -449,33 +447,7 @@ public void getImmagineAttivita() throws Exception{
 	
 }
 
-public boolean gestisciAsterischiAggiungiRecensione(JLabel asterisco_titolo , JLabel asterisco_recensione , JTextField titolo , JTextArea recensione){
-	if(titolo.getText().length()==0){
-		asterisco_titolo.setVisible(true);
-	}else asterisco_titolo.setVisible(false);
-	if(recensione.getText().length()==0){
-		asterisco_recensione.setVisible(true);
-	}else asterisco_recensione.setVisible(false);
-	if(titolo.getText().length()!=0 && recensione.getText().length()!=0 ){
-		return true;
-	}else return false;
-
-}
-public String generaCodiceRecensione() throws NumberFormatException, Exception{
-	 count_codice=Integer.parseInt(dao_recensione.getCodiceRecensioneDb());
-	 count_codice=count_codice+1;
-	 String contatore_stringa=String.valueOf(count_codice);
-	 return contatore_stringa;}
-
-public String generaCodiceSegnalazione() throws NumberFormatException, Exception{
-	 count_codice=Integer.parseInt(dao_segnalazione.getCodiceSegnalazioneDb());
-	 count_codice=count_codice+1;
-	 String contatore_stringa=String.valueOf(count_codice);
-	 return contatore_stringa;
-	
-}
 public void inserisciRecensione(String codice_recensione ,String titolo_recensione , String descrizione_recensione , int voto) throws Exception{
-	
 	review.setTitolo_recensione(titolo_recensione);
 	review.setDescrizione_recensione(descrizione_recensione);
 	review.setVoto(voto);
@@ -483,9 +455,9 @@ public void inserisciRecensione(String codice_recensione ,String titolo_recensio
 	review.setCodice_attivita(attivita_cercata.getCodice_attivita());
 	review.setData(data);
 	java.sql.Date data_sql= new java.sql.Date (data.getTime());
-	dao_recensione.inserisciRecensioneDb(codice_recensione, titolo_recensione, descrizione_recensione, voto, user_loggato.getNickname(), attivita_cercata.getCodice_attivita(),data_sql);
-	
-}
+	dao_recensione.inserisciRecensioneDb(codice_recensione, titolo_recensione, descrizione_recensione, voto, user_loggato.getNickname(), attivita_cercata.getCodice_attivita(),data_sql);}
+
+//verifica se è stata già inserita una recensione dallo stesso utente nella medesima attività
 public boolean verificaAggiuntaRecensione() throws Exception{
 	 if(dao_recensione.verificaInserimentoDbRecensione(user_loggato.getNickname(),attivita_cercata.getCodice_attivita())){
 		 return true;
@@ -516,6 +488,7 @@ public ImageIcon resizeIcon(ImageIcon foto){
 	 foto=new ImageIcon(resize_image.getScaledImage(img, 456, 255));
 	 return foto;}
 
+//gestisce quale menù visualizzare a seconda del tipo di utente loggato
 public void gestisciVisiblitaMenu(){
 	try {
 		if(dao_utente.verificaSeAccountProprietario(user_loggato.getNickname())==true){
@@ -743,18 +716,7 @@ public void getTextModificaAttivita(){
 }
 
 
-public boolean gestisciEccezioniModificaAttivita(String nome_modificato,String via_modificata,String descrizione_modificata){
-	if(nome_modificato.length()==0 || via_modificata.length()==0 || descrizione_modificata.length()==0){
-		return false;
-	}
-	try {
-		if(dao_attivita.verificaModificaAttivita(nome_modificato, attivita_propria_selezionata.getPosizione_attivita(),attivita_propria_selezionata.getCodice_attivita())){
-			return true;
-		}else return false;
-	} catch (Exception e) {
-		e.printStackTrace();
-		return false;
-	}}
+
 
 public void modificaAttivitaSelezionata(String nome_modificato,String via_modificata, String descrizione_modificata){
 	try {
@@ -799,19 +761,7 @@ public boolean cercaModeratoreNelDatabase() throws Exception{
 		 return true;
 	 }else return false;
 }
-@SuppressWarnings("deprecation")
-public boolean gestisciEccezioniLoginModeratore(JLabel asterisco_username , JLabel asterisco_password , JTextField username , JPasswordField password){
-		if(username.getText().length()==0){
-			asterisco_username.setVisible(true);
-		}else asterisco_username.setVisible(false);
-		if(password.getText().length()==0){
-			asterisco_password.setVisible(true);
-		}else asterisco_password.setVisible(false);
-		if(username.getText().length()!=0 && password.getText().length()!=0 ){
-			return true;
-		}else return false;
 
-	}
 
 public boolean verificaPresenzaSegnalazioni(JLabel lblnotFound, JLabel lblFound) throws Exception{
 	    
