@@ -11,13 +11,14 @@ private String descrizione_attivita;
 private String codice_attivita;
 private String username_utente;
 private ImageIcon immagine_attivita;
+private float media;
+
 public ImageIcon getImmagine_attivita() {
 	return immagine_attivita;
 }
 public void setImmagine_attivita(ImageIcon immagine_attivita) {
 	this.immagine_attivita = immagine_attivita;
 }
-private float media;
 
 public float getMedia() {
 	return media;

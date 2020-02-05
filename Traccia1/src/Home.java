@@ -47,7 +47,7 @@ public class Home extends JFrame {
 	 */
 	public Home(Controller ctrl) {
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Home.class.getResource("/Images/rating.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Home.class.getResource("/Images/good-review.jpg")));
 		Controller controller=ctrl;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 793, 608);
@@ -224,7 +224,7 @@ public class Home extends JFrame {
 		menuBar.setBounds(0, 0, 139, 31);
 		panel.add(menuBar);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem("Area di Servizio");
+		JMenuItem mntmNewMenuItem = new JMenuItem("Area Riservata");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);

@@ -1,10 +1,12 @@
 
 public class Utente {
-    String nome;
+    private String nome;
     private String cognome;
     private String nickname;
     private String password;
     private boolean moderatore;
+    
+    
     public String getNome() {
 		return nome;
 	}

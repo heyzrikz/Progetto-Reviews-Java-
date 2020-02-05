@@ -59,7 +59,7 @@ public class MostraRecensioni extends JFrame {
 JButton btnBack = new JButton("\r\n");
 		
 		btnBack.setIcon(new ImageIcon(AggiungiRecensioneFrame.class.getResource("/Images/undo.png")));
-		btnBack.setBounds(860, 490, 37, 33);
+		btnBack.setBounds(920, 573, 37, 33);
 		btnBack.setOpaque(false);
 		btnBack.setContentAreaFilled(false);
 		btnBack.setBorderPainted(false);

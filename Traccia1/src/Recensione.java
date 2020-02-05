@@ -4,14 +4,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Recensione {
-String username_utente;
-String codice_attivita;
-String codice_recensione;
-String titolo_recensione;
-String descrizione_recensione;
-int voto;
+	Date data=new Date();
+private String username_utente;
+private String codice_attivita;
+private String codice_recensione;
+private String titolo_recensione;
+private String descrizione_recensione;
+private int voto;
 DateFormat formato_data=new SimpleDateFormat("dd/MM/yy HH:mm:ss");
-Date data=new Date();
+java.sql.Date data_sql=new java.sql.Date(data.getTime());
+
 public String getUsername_utente() {
 	return username_utente;
 }
@@ -49,10 +51,10 @@ public void setVoto(int voto) {
 	this.voto = voto;
 }
 public Date getData() {
-	return data;
+	return data_sql;
 }
-public void setData(Date data) {
-	this.data = data;
+public void setData(java.sql.Date data) {
+	this.data_sql = data;
 }
 
 

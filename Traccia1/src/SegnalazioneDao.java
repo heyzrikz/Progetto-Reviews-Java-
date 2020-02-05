@@ -1,5 +1,4 @@
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,7 +27,7 @@ public class SegnalazioneDao extends ConnessioneDao{
 			return true;
 		}else return false; }
 	
-	public void inserisciSegnalazioneDb(String codice_recensione,String titolo_recensione ,String descrizione_recensione , int voto ,String username_utente , String codice_attivita,Date data_recensione,String codice_segnalazione) throws Exception{
+	public void inserisciSegnalazioneDb(String codice_recensione,String codice_segnalazione) throws Exception{
 		   Connection con=getConnection();
 		   try{
 		PreparedStatement addReport=con.prepareStatement("INSERT INTO public.segnalazione( codice_recensione ,codice_segnalazione) VALUES (?, ?);");

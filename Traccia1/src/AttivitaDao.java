@@ -234,6 +234,15 @@ public void modificaAttivitaDb(String nome_modificato,  String via_modificata, S
 	modifica.executeUpdate();
 }
 
+public void eliminaAttivitaDb(String codice_attività) throws Exception{
+	Connection con=getConnection();
+	PreparedStatement elimina = con.prepareStatement("DELETE FROM public.attivita WHERE codice_attivita=?");
+	elimina.setString(1, codice_attività);
+	elimina.executeUpdate();
+	
+	
+}
+
 
 
 }

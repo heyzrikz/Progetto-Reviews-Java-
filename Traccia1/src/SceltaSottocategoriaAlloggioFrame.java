@@ -67,9 +67,9 @@ public class SceltaSottocategoriaAlloggioFrame extends JFrame {
 		lblPizza.setBounds(284, 391, 110, 70);
 		panelAlloggio.add(lblPizza);
 		
-		JButton btnCucinaLocale = new JButton("");
-		btnCucinaLocale.setHorizontalAlignment(SwingConstants.LEFT);
-		btnCucinaLocale.addActionListener(new ActionListener() {
+		JButton btnHotel = new JButton("");
+		btnHotel.setHorizontalAlignment(SwingConstants.LEFT);
+		btnHotel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					controller.setVisibleMostraAttivita(true);
@@ -82,16 +82,16 @@ public class SceltaSottocategoriaAlloggioFrame extends JFrame {
 				}
 			}
 		});
-		btnCucinaLocale.setBorder(null);
-		btnCucinaLocale.setIcon(new ImageIcon(SceltaSottocategoriaAlloggioFrame.class.getResource("/Images/hotel.png")));
-		btnCucinaLocale.setOpaque(false);
-		btnCucinaLocale.setContentAreaFilled(false);
-		btnCucinaLocale.setBounds(51, 153, 405, 140);
-		panelAlloggio.add(btnCucinaLocale);
+		btnHotel.setBorder(null);
+		btnHotel.setIcon(new ImageIcon(SceltaSottocategoriaAlloggioFrame.class.getResource("/Images/hotel.png")));
+		btnHotel.setOpaque(false);
+		btnHotel.setContentAreaFilled(false);
+		btnHotel.setBounds(51, 153, 405, 140);
+		panelAlloggio.add(btnHotel);
 		
-		JButton btnPizza = new JButton("");
-		btnPizza.setHorizontalAlignment(SwingConstants.LEFT);
-		btnPizza.addActionListener(new ActionListener() {
+		JButton btnBeB = new JButton("");
+		btnBeB.setHorizontalAlignment(SwingConstants.LEFT);
+		btnBeB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					controller.setVisibleMostraAttivita(true);
@@ -104,12 +104,12 @@ public class SceltaSottocategoriaAlloggioFrame extends JFrame {
 				}
 			}
 		});
-		btnPizza.setIcon(new ImageIcon(SceltaSottocategoriaAlloggioFrame.class.getResource("/Images/bedAndB.png")));
-		btnPizza.setOpaque(false);
-		btnPizza.setContentAreaFilled(false);
-		btnPizza.setBorder(null);
-		btnPizza.setBounds(51, 359, 343, 143);
-		panelAlloggio.add(btnPizza);
+		btnBeB.setIcon(new ImageIcon(SceltaSottocategoriaAlloggioFrame.class.getResource("/Images/bedAndB.png")));
+		btnBeB.setOpaque(false);
+		btnBeB.setContentAreaFilled(false);
+		btnBeB.setBorder(null);
+		btnBeB.setBounds(51, 359, 343, 143);
+		panelAlloggio.add(btnBeB);
 				
 				JButton btnBack = new JButton("\r\n");
 				btnBack.setBounds(577, 748, 37, 33);
@@ -127,11 +127,11 @@ public class SceltaSottocategoriaAlloggioFrame extends JFrame {
 				btnBack.setBorderPainted(false);
 				btnBack.setBorder(null);
 				
-				JButton btnPesce = new JButton("");
-				btnPesce.setHorizontalAlignment(SwingConstants.LEFT);
-				btnPesce.setBounds(51, 575, 366, 140);
-				panelAlloggio.add(btnPesce);
-				btnPesce.addActionListener(new ActionListener() {
+				JButton btnOstello = new JButton("");
+				btnOstello.setHorizontalAlignment(SwingConstants.LEFT);
+				btnOstello.setBounds(51, 575, 366, 140);
+				panelAlloggio.add(btnOstello);
+				btnOstello.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						try {
 							controller.setVisibleMostraAttivita(true);
@@ -144,10 +144,10 @@ public class SceltaSottocategoriaAlloggioFrame extends JFrame {
 						}
 					}
 				});
-				btnPesce.setIcon(new ImageIcon(SceltaSottocategoriaAlloggioFrame.class.getResource("/Images/hostel.png")));
-				btnPesce.setOpaque(false);
-				btnPesce.setContentAreaFilled(false);
-				btnPesce.setBorder(null);
+				btnOstello.setIcon(new ImageIcon(SceltaSottocategoriaAlloggioFrame.class.getResource("/Images/hostel.png")));
+				btnOstello.setOpaque(false);
+				btnOstello.setContentAreaFilled(false);
+				btnOstello.setBorder(null);
 				
 				JLabel lblPesce = new JLabel("Ostello\r\n");
 				lblPesce.setBounds(284, 615, 140, 52);

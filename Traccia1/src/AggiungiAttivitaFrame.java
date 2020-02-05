@@ -340,6 +340,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 		btnAggiungiFoto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.scegliImmagine();
+				
 					
 				
 			}
@@ -399,7 +400,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 					controller.inserisciAttivitaDatabase(txtNomeAttivita.getText(),comboBoxPosizione.getSelectedItem().toString(),txtViaAttivita.getText(), comboBoxCategoria.getSelectedItem().toString(),sottocategoria_scelta,sottocategoria_seconda_scelta,txtDescrizioneAttivita.getText(),controller.generaCodiceAttivita());
 					controller.setDefaultAggiungiAttivitaFrame(txtNomeAttivita, txtViaAttivita, txtDescrizioneAttivita,lblAsterisco_immagine);}
 			}catch (Exception e1) {	
-				System.err.println("Errore verifica aggiunta attivita");}
+				lblAsterisco_immagine.setVisible(true);}
 			}else 	lblErroreCategoria.setVisible(true);
 		 }}});
 		

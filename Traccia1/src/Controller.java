@@ -357,7 +357,7 @@ public String sceltaSottocategoria(JComboBox<String> categoria , JComboBox<Strin
 
 //verifica se è presente nel database un'attività con lo stesso nome che si trova nella medesima posizione
 public boolean verificaPresenzaAttivita(String nome_attività,String posizione_attività) throws Exception{
-	if(dao_attivita.verificaAggiuntaAttivita(nome_attività ,posizione_attività)==false){
+	if(dao_attivita.verificaAggiuntaAttivita(nome_attività ,posizione_attività)==false || immagine_file==null){
 		setVisibleAttivitaAggiuntaFallita(true);
 		setVisibleAggiungiAttivitaFrame(false);
 		setVisibleAttivitaAggiuntaRiuscita(false);
@@ -368,9 +368,21 @@ public boolean verificaPresenzaAttivita(String nome_attività,String posizione_at
 		setVisibleAttivitaAggiuntaRiuscita(true);
 		return true;}}
 
+//inserisce l'attività nel database
 public void inserisciAttivitaDatabase(String nome_attività,String posizione_attività,String via_attività, String categoria_attività,String sottocategoria_attività,String seconda_sottocategoria_attività,String descrizione_attività,String codice_attività) throws Exception{
-	dao_attivita.InserisciAttivita(nome_attività, posizione_attività, via_attività, categoria_attività , sottocategoria_attività, seconda_sottocategoria_attività, descrizione_attività, codice_attività, user_loggato.getNickname(),immagine_file);}
+	activity.setNome_attivita(nome_attività);
+	activity.setPosizione_attivita(posizione_attività);
+	activity.setVia_attivita(via_attività);
+	activity.setCategoria_attivita(categoria_attività);
+	activity.setSottocategoria_attivita(sottocategoria_attività);
+	activity.setSottocategoria_attivita_2(seconda_sottocategoria_attività);
+	activity.setDescrizione_attivita(descrizione_attività);
+	activity.setCodice_attivita(codice_attività);
+	dao_attivita.InserisciAttivita(activity.getNome_attivita(), activity.getPosizione_attivita(), activity.getVia_attivita(), activity.getCategoria_attivita() , activity.getSottocategoria_attivita(), activity.getSottocategoria_attivita_2(), activity.getDescrizione_attivita(), activity.getCodice_attivita(), user_loggato.getNickname(),immagine_file);
+	immagine_file=null;
+}
 
+//questi metodi riportano i relativi frame a valori di default
 public void setDefaultAggiungiAttivitaFrame(JTextField nome_attivita , JTextField via_attivita , JTextArea descrizione_attivita,JLabel asterisco_immagine){
 	nome_attivita.setText("Inserisci Nome Attivit\u00E0");
 	via_attivita.setText("Inserisci Citt\u00E0 e Via Attivit\u00E0");
@@ -417,9 +429,11 @@ public ArrayList<Attivita> getElencoAttivita(String posizione , String categoria
 	elenco_attivita.addAll(dao_attivita.getElencoAttivitaDb(posizione, categoria));
 	return elenco_attivita;}
 
+//cerca un'attività nel database
 public void cercaAttivita(String posizione , String categoria , String nome) throws Exception{
 	attivita_cercata=dao_attivita.cercaAttivitaDb(posizione, categoria, nome);}
 
+//gestione delle label dinamiche del frame AggiungiRecensione
 public void setLabelAggiungiRecensioneFrame(JLabel nome,JLabel posizione , JLabel via, JLabel sottocategoria,JLabel sottocategoria_seconda,JTextArea descrizione,JLabel immagine){
 	 lblNomeAttivitaScelta=nome;
     lblPosizioneAttivita=posizione;
@@ -446,16 +460,17 @@ public void getImmagineAttivita() throws Exception{
 	 lblImmagineAttivita.setIcon(imageIcon);
 	
 }
-
+//inserisce recensione nel database
 public void inserisciRecensione(String codice_recensione ,String titolo_recensione , String descrizione_recensione , int voto) throws Exception{
+	review.setCodice_recensione(codice_recensione);
 	review.setTitolo_recensione(titolo_recensione);
 	review.setDescrizione_recensione(descrizione_recensione);
 	review.setVoto(voto);
 	review.setUsername_utente(user_loggato.getNickname());
 	review.setCodice_attivita(attivita_cercata.getCodice_attivita());
-	review.setData(data);
 	java.sql.Date data_sql= new java.sql.Date (data.getTime());
-	dao_recensione.inserisciRecensioneDb(codice_recensione, titolo_recensione, descrizione_recensione, voto, user_loggato.getNickname(), attivita_cercata.getCodice_attivita(),data_sql);}
+	review.setData(data_sql);
+	dao_recensione.inserisciRecensioneDb(review.getCodice_recensione(), review.getTitolo_recensione(), review.getDescrizione_recensione(), review.getVoto(), user_loggato.getNickname(), review.getCodice_attivita(),data_sql);}
 
 //verifica se è stata già inserita una recensione dallo stesso utente nella medesima attività
 public boolean verificaAggiuntaRecensione() throws Exception{
@@ -464,12 +479,13 @@ public boolean verificaAggiuntaRecensione() throws Exception{
 	 }else return false;
 }
 
+//metodo che gestisce il file chooser che determina la scelta dell'immagine
 public String scegliImmagine(){
 	String scelta;
 	JButton open= new JButton();
 	JFileChooser fc = new JFileChooser();
 	fc.setCurrentDirectory(new java.io.File("C:/Users/lenovo/Desktop"));
-    fc.setDialogTitle("Hello world");
+    fc.setDialogTitle("Scegli l'immagine");
     fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
     fc.setFileFilter(new ImageFileFiltrer());
 if(fc.showOpenDialog(open)== JFileChooser.APPROVE_OPTION){
@@ -482,6 +498,7 @@ if(fc.showOpenDialog(open)== JFileChooser.APPROVE_OPTION){
 	immagine_scelta="null";
 	return null;}}
 
+//metodo che reimposta le dimensioni di un'immagine
 public ImageIcon resizeIcon(ImageIcon foto){
 	ImageFileFiltrer resize_image=new ImageFileFiltrer();
 	 Image img=foto.getImage();
@@ -503,6 +520,7 @@ public void gestisciVisiblitaMenu(){
 	}
 }
 
+//a seconda di quale categoria è stata scelta gestisce la visibilità del relativo menù di scelta
 public boolean gestisciSceltaSottocategoria(String posizione,String categoria){
 	if(dao_attivita.verificaCategoriaAttivitaNelDb(posizione, categoria)){
 		posizione_cercata=posizione;
@@ -746,8 +764,7 @@ public boolean verificaSegnalazione(){
 		return false;}}
 
 public void inserisciSegnalazione(String codice_segnalazione) throws Exception{
-	java.sql.Date data_recensione= new java.sql.Date (recensione_cercata.getData().getTime());
-	dao_segnalazione.inserisciSegnalazioneDb(recensione_cercata.getCodice_recensione(), recensione_cercata.getTitolo_recensione(), recensione_cercata.getDescrizione_recensione(),recensione_cercata.getVoto(),recensione_cercata.getUsername_utente(), recensione_cercata.getCodice_attivita(), data_recensione ,codice_segnalazione);
+	dao_segnalazione.inserisciSegnalazioneDb(recensione_cercata.getCodice_recensione(),codice_segnalazione);
 	
 }
 public void setModeratoreAcceduto(String nickname , String password){
@@ -764,7 +781,6 @@ public boolean cercaModeratoreNelDatabase() throws Exception{
 
 
 public boolean verificaPresenzaSegnalazioni(JLabel lblnotFound, JLabel lblFound) throws Exception{
-	    
 if(dao_segnalazione.verificaPresenzaSegnalazioni()==true){
 	lblnotFound.setVisible(false);
 	lblFound.setVisible(true);
@@ -789,8 +805,11 @@ public boolean verificaIdModeratoreInUso(String id) throws Exception{
 	}else return false;}
 
 public void inserisciModeratore(String id,String nome,String cognome,String password) throws Exception{
-	System.out.println("ole: "+id);
 	dao_admin.inserisciModeratoreDb(id, nome,cognome, password);
+}
+
+public void eliminaAttivita() throws Exception{
+	dao_attivita.eliminaAttivitaDb(attivita_propria_selezionata.getCodice_attivita());
 }
 
 

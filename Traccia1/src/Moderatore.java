@@ -1,9 +1,10 @@
 
 public class Moderatore {
-String nome;
-String cognome;
-String password;
-String id;
+private String nome;
+private String cognome;
+private String password;
+private String id;
+
 public String getNome() {
 	return nome;
 }

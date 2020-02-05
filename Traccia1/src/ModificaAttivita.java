@@ -128,8 +128,8 @@ public class ModificaAttivita extends JFrame {
 		btnBack.setBorder(null);
 		contentPane.add(btnBack);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnModifica = new JButton("");
+		btnModifica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			if(controller.gestisciEccezioniModificaAttivita(txtNomeAttivita.getText(), txtViaAttivita.getText(), txtDescrizioneAttivita.getText())==true){
 				controller.modificaAttivitaSelezionata(txtNomeAttivita.getText(), txtViaAttivita.getText(), txtDescrizioneAttivita.getText());
@@ -137,12 +137,32 @@ public class ModificaAttivita extends JFrame {
 			}
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon(ModificaAttivita.class.getResource("/Images/pencil.png")));
-		btnNewButton.setBorder(null);
-		btnNewButton.setBorderPainted(false);
-		btnNewButton.setOpaque(false);
-		btnNewButton.setBounds(690, 460, 44, 30);
-		btnNewButton.setContentAreaFilled(false);
-		contentPane.add(btnNewButton);
+		btnModifica.setIcon(new ImageIcon(ModificaAttivita.class.getResource("/Images/pencil.png")));
+		btnModifica.setBorder(null);
+		btnModifica.setBorderPainted(false);
+		btnModifica.setOpaque(false);
+		btnModifica.setBounds(690, 460, 44, 30);
+		btnModifica.setContentAreaFilled(false);
+		contentPane.add(btnModifica);
+		
+		JButton btnEliminaAttivita = new JButton("\r\n");
+		btnEliminaAttivita.setBorder(null);
+		btnEliminaAttivita.setContentAreaFilled(false);
+		btnEliminaAttivita.setOpaque(false);
+		btnEliminaAttivita.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try{int dialog = JOptionPane.showConfirmDialog(null,"Vuoi davvero eliminare questa attività?","Attenzione",JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
+				if(dialog == JOptionPane.OK_OPTION){
+					controller.eliminaAttivita();
+					 JOptionPane.showConfirmDialog(null,"Eliminazione effettuata con successo","Attenzione",JOptionPane.PLAIN_MESSAGE,JOptionPane.PLAIN_MESSAGE);
+					 setVisible(false);
+					 controller.setVisibleMenuPrincipaleProprietario(true);
+				}
+			}catch(Exception e){
+				System.err.println(e);
+			}}
+		});
+		btnEliminaAttivita.setBounds(513, 460, 115, 29);
+		contentPane.add(btnEliminaAttivita);
 }	
 }
