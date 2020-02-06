@@ -14,6 +14,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class LoginModeratore extends JFrame {
@@ -42,6 +43,7 @@ public class LoginModeratore extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginModeratore(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(LoginModeratore.class.getResource("/Images/tools.png")));
 		Controller controller=ctrl;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 823, 632);
@@ -140,6 +142,7 @@ public class LoginModeratore extends JFrame {
 		contentPane.add(lblPassword);
 		
 		JButton btnAccedi = new JButton("");
+		btnAccedi.setFocusPainted(false);
 		btnAccedi.setIcon(new ImageIcon(LoginModeratore.class.getResource("/Images/login.png")));
 		btnAccedi.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
@@ -170,6 +173,7 @@ public class LoginModeratore extends JFrame {
 		contentPane.add(btnAccedi);
 		
 		JButton btnTornaIndietro = new JButton("");
+		btnTornaIndietro.setFocusPainted(false);
 		btnTornaIndietro.setIcon(new ImageIcon(RegistrazioneFrame.class.getResource("/Images/undo.png")));
 		btnTornaIndietro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class ModificaAttivita extends JFrame {
@@ -44,6 +45,7 @@ public class ModificaAttivita extends JFrame {
 	 * Create the frame.
 	 */
 	public ModificaAttivita(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ModificaAttivita.class.getResource("/Images/writing.png")));
 		Controller controller=ctrl;
 		setBackground(new Color(128, 0, 0));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -121,7 +123,7 @@ public class ModificaAttivita extends JFrame {
 			}
 		});
 		btnBack.setIcon(new ImageIcon(AggiungiRecensioneFrame.class.getResource("/Images/undo.png")));
-		btnBack.setBounds(638, 460, 37, 33);
+		btnBack.setBounds(601, 460, 37, 33);
 		btnBack.setOpaque(false);
 		btnBack.setContentAreaFilled(false);
 		btnBack.setBorderPainted(false);
@@ -146,6 +148,7 @@ public class ModificaAttivita extends JFrame {
 		contentPane.add(btnModifica);
 		
 		JButton btnEliminaAttivita = new JButton("\r\n");
+		btnEliminaAttivita.setIcon(new ImageIcon(ModificaAttivita.class.getResource("/Images/delete.png")));
 		btnEliminaAttivita.setBorder(null);
 		btnEliminaAttivita.setContentAreaFilled(false);
 		btnEliminaAttivita.setOpaque(false);
@@ -162,7 +165,7 @@ public class ModificaAttivita extends JFrame {
 				System.err.println(e);
 			}}
 		});
-		btnEliminaAttivita.setBounds(513, 460, 115, 29);
+		btnEliminaAttivita.setBounds(647, 449, 44, 55);
 		contentPane.add(btnEliminaAttivita);
 }	
 }

@@ -16,6 +16,7 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.JSeparator;
 import javax.swing.JPasswordField;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class AggiungiModeratore extends JFrame {
@@ -46,6 +47,7 @@ public class AggiungiModeratore extends JFrame {
 	 * Create the frame.
 	 */
 	public AggiungiModeratore(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(AggiungiModeratore.class.getResource("/Images/add_moderatore.png")));
 		Controller controller=ctrl;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 517, 677);
@@ -212,6 +214,7 @@ public class AggiungiModeratore extends JFrame {
 		});
 		
 		JButton btnTornaIndietro = new JButton("");
+		btnTornaIndietro.setFocusPainted(false);
 		btnTornaIndietro.setIcon(new ImageIcon(RegistrazioneFrame.class.getResource("/Images/undo.png")));
 		btnTornaIndietro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -240,19 +243,18 @@ public class AggiungiModeratore extends JFrame {
 		contentPane.add(separator_4);
 		
 		JButton btnRegistrati = new JButton("Registrati");
+		btnRegistrati.setFocusPainted(false);
 		btnRegistrati.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
 	try{
 		if(controller.gestisciEccezioniAggiungiModeratore(lblNomeAsterisco, lblCognomeAsterisco, lblIdAsterisco, lblPasswordAsterisco,txtNome, txtCognome, txtId, passwordField,lblErroreMinPassword)==true ){
 		if(controller.verificaIdModeratoreInUso(txtId.getText())==false){
-			System.out.println("oo: "+txtNome.getText());
 			controller.inserisciModeratore(txtId.getText(), txtNome.getText(), txtCognome.getText(),passwordField.getText());
 			lblModeratoreAggiunto.setVisible(true);
 			
-			controller.setDefaultAggiungiModeratoreFrame(txtNome, txtCognome, txtId, passwordField,lblIdAsterisco,lblNomeAsterisco,lblCognomeAsterisco,lblPasswordAsterisco,lblErroreMinPassword,lblErroreId,lblModeratoreAggiunto);
-			
-		}else lblErroreId.setVisible(true);
+		}else {lblErroreId.setVisible(true);
+		lblModeratoreAggiunto.setVisible(false);}
 		
 		
 	}

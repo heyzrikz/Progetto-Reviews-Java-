@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class MenuPrincipaleUtente extends JFrame {
@@ -37,6 +38,7 @@ public class MenuPrincipaleUtente extends JFrame {
 	 * Create the frame.
 	 */
 	public MenuPrincipaleUtente(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MenuPrincipaleUtente.class.getResource("/Images/add_review.png")));
 		setResizable(false);
 		Controller controller=ctrl;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,6 +75,7 @@ public class MenuPrincipaleUtente extends JFrame {
 			}
 		});
 		btnAggiungiRecensione.setBounds(54, 394, 558, 157);
+		btnAggiungiRecensione.setFocusPainted(false);
 		btnAggiungiRecensione.setFont(new Font("Trebuchet MS", Font.PLAIN, 16));
 		btnAggiungiRecensione.setBorder(null);
 		btnAggiungiRecensione.setIcon(new ImageIcon(MenuPrincipaleUtente.class.getResource("/Images/add_review.png")));
@@ -82,6 +85,7 @@ public class MenuPrincipaleUtente extends JFrame {
 		
 		JButton btnRicerca = new JButton("\r\n");
 		btnRicerca.setHorizontalAlignment(SwingConstants.LEFT);
+		btnRicerca.setFocusPainted(false);
 		btnRicerca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.setVisibleCercaRecensioneFrame(true);
@@ -97,6 +101,7 @@ public class MenuPrincipaleUtente extends JFrame {
 		
 		JButton btnBack = new JButton("\r\n");
 		btnBack.setBounds(577, 608, 37, 33);
+		btnBack.setFocusPainted(false);
 		panel.add(btnBack);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

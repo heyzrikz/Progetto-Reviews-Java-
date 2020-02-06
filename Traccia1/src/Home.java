@@ -66,6 +66,7 @@ public class Home extends JFrame {
 		JButton btnRegistrati = new JButton("Registrati");
 		btnRegistrati.setFont(new Font("Trebuchet MS", Font.PLAIN, 16));
 		btnRegistrati.setBorder(null);
+		btnRegistrati.setFocusPainted(false);
 		btnRegistrati.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.setVisibleRegistrazione(true);
@@ -189,6 +190,7 @@ public class Home extends JFrame {
 		});
 		btnAccedi.setIcon(new ImageIcon(Home.class.getResource("/Images/login.png")));
 		btnAccedi.setOpaque(false);
+		btnAccedi.setFocusPainted(false);
 		btnAccedi.setContentAreaFilled(false);
 		btnAccedi.setBorderPainted(false);
 		btnAccedi.setBorder(null);

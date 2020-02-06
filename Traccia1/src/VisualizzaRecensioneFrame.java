@@ -99,6 +99,7 @@ public class VisualizzaRecensioneFrame extends JFrame {
 		btnSegnala.setBorder(null);
 		btnSegnala.setBorderPainted(false);
 		btnSegnala.setContentAreaFilled(false);
+		btnSegnala.setFocusPainted(false);
 		btnSegnala.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int dialog = JOptionPane.showConfirmDialog(null,"Vuoi davvero segnalare questa recensione?","Attenzione",JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
@@ -123,6 +124,7 @@ public class VisualizzaRecensioneFrame extends JFrame {
 		btnTornaIndietro.setBounds(422, 412, 47, 41);
 		contentPane.add(btnTornaIndietro);
 		
+		btnTornaIndietro.setFocusPainted(false);
 		btnTornaIndietro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);

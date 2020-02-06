@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class MenuPrincipaleModeratore extends JFrame {
@@ -37,6 +38,7 @@ public class MenuPrincipaleModeratore extends JFrame {
 	 * Create the frame.
 	 */
 	public MenuPrincipaleModeratore(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MenuPrincipaleModeratore.class.getResource("/Images/tools.png")));
 		setResizable(false);
 		Controller controller=ctrl;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -95,6 +97,7 @@ public class MenuPrincipaleModeratore extends JFrame {
 		panel.add(lblSegnalazioneNonTrovata);
 		
 		JButton btnGestisciSegnalazioni = new JButton("\r\n");
+		btnGestisciSegnalazioni.setFocusPainted(false);
 		btnGestisciSegnalazioni.setHorizontalAlignment(SwingConstants.LEFT);
 		btnGestisciSegnalazioni.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -120,6 +123,7 @@ public class MenuPrincipaleModeratore extends JFrame {
 		JButton btnCreaModeratore = new JButton("\r\n");
 		btnCreaModeratore.setIcon(new ImageIcon(MenuPrincipaleModeratore.class.getResource("/Images/add_moderatore.png")));
 		btnCreaModeratore.setHorizontalAlignment(SwingConstants.LEFT);
+		btnCreaModeratore.setFocusPainted(false);
 		btnCreaModeratore.setBorder(null);
 		btnCreaModeratore.setContentAreaFilled(false);
 		btnCreaModeratore.setOpaque(false);
@@ -141,6 +145,7 @@ public class MenuPrincipaleModeratore extends JFrame {
 		lblNewLabel.setBounds(211, 420, 248, 40);
 		panel.add(lblNewLabel);
 		
+		btnBack.setFocusPainted(false);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lblSegnalazioneNonTrovata.setVisible(false);

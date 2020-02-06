@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class CercaRecensioneFrame extends JFrame {
@@ -39,6 +40,7 @@ public class CercaRecensioneFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public CercaRecensioneFrame(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(CercaRecensioneFrame.class.getResource("/Images/search_icon.png")));
 		setResizable(false);
 		Controller controller=ctrl;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -84,6 +86,7 @@ public class CercaRecensioneFrame extends JFrame {
 		contentPane.add(comboBoxCategoria);
 		
 		JButton btnBack = new JButton("\r\n");
+		btnBack.setFocusPainted(false);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -105,6 +108,7 @@ public class CercaRecensioneFrame extends JFrame {
 		contentPane.add(separator);
 		
 		JButton btnRicerca = new JButton("");
+		btnRicerca.setFocusPainted(false);
 		btnRicerca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(controller.gestisciSceltaSottocategoria(comboBoxPosizione.getSelectedItem().toString(), comboBoxCategoria.getSelectedItem().toString())==true){

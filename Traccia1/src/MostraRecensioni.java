@@ -136,6 +136,7 @@ JButton btnBack = new JButton("\r\n");
 		tableRecensioni.setFont(new Font("Trebuchet MS", Font.PLAIN, 19));
 		scrollPane.setViewportView(tableRecensioni);
 		
+		btnBack.setFocusPainted(false);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controller.removeAllItems(tableRecensioni);

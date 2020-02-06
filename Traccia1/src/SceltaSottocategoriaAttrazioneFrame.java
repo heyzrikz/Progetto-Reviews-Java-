@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class SceltaSottocategoriaAttrazioneFrame extends JFrame {
@@ -38,6 +39,7 @@ public class SceltaSottocategoriaAttrazioneFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public SceltaSottocategoriaAttrazioneFrame(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(SceltaSottocategoriaAttrazioneFrame.class.getResource("/Images/search_icon.png")));
 		setResizable(false);
 		setBackground(new Color(128, 0, 0));
 		Controller controller=ctrl;
@@ -67,44 +69,45 @@ public class SceltaSottocategoriaAttrazioneFrame extends JFrame {
 		contentPane.add(panelAttrazione);
 		panelAttrazione.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Museo\r\n");
-		lblNewLabel.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
-		lblNewLabel.setForeground(new Color(255, 215, 0));
-		lblNewLabel.setBounds(192, 89, 117, 47);
-		panelAttrazione.add(lblNewLabel);
+		JLabel lblMuseo = new JLabel("Museo\r\n");
+		lblMuseo.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
+		lblMuseo.setForeground(new Color(255, 215, 0));
+		lblMuseo.setBounds(192, 89, 117, 47);
+		panelAttrazione.add(lblMuseo);
 		
-		JLabel lblPizza = new JLabel("Tour");
-		lblPizza.setForeground(new Color(255, 215, 0));
-		lblPizza.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
-		lblPizza.setBounds(619, 94, 78, 36);
-		panelAttrazione.add(lblPizza);
+		JLabel lblTour = new JLabel("Tour");
+		lblTour.setForeground(new Color(255, 215, 0));
+		lblTour.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
+		lblTour.setBounds(619, 94, 78, 36);
+		panelAttrazione.add(lblTour);
 		
-		JLabel lblPesce = new JLabel("Teatro");
-		lblPesce.setForeground(new Color(255, 215, 0));
-		lblPesce.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
-		lblPesce.setBounds(591, 292, 106, 33);
-		panelAttrazione.add(lblPesce);
+		JLabel lblTeatro = new JLabel("Teatro");
+		lblTeatro.setForeground(new Color(255, 215, 0));
+		lblTeatro.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
+		lblTeatro.setBounds(591, 292, 106, 33);
+		panelAttrazione.add(lblTeatro);
 		
-		JLabel lblSteakhouse = new JLabel("Parco Divertimenti");
-		lblSteakhouse.setForeground(new Color(255, 215, 0));
-		lblSteakhouse.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
-		lblSteakhouse.setBounds(429, 491, 283, 33);
-		panelAttrazione.add(lblSteakhouse);
+		JLabel lblParcoDivertimenti = new JLabel("Parco Divertimenti");
+		lblParcoDivertimenti.setForeground(new Color(255, 215, 0));
+		lblParcoDivertimenti.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
+		lblParcoDivertimenti.setBounds(429, 491, 283, 33);
+		panelAttrazione.add(lblParcoDivertimenti);
 		
-		JLabel lblGiapponese = new JLabel("Cinema");
-		lblGiapponese.setForeground(new Color(255, 215, 0));
-		lblGiapponese.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
-		lblGiapponese.setBounds(192, 290, 117, 36);
-		panelAttrazione.add(lblGiapponese);
+		JLabel lblCinema = new JLabel("Cinema");
+		lblCinema.setForeground(new Color(255, 215, 0));
+		lblCinema.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
+		lblCinema.setBounds(192, 290, 117, 36);
+		panelAttrazione.add(lblCinema);
 		
-		JLabel lblCaff = new JLabel("Lido\r\n");
-		lblCaff.setForeground(new Color(255, 215, 0));
-		lblCaff.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
-		lblCaff.setBounds(192, 484, 89, 47);
-		panelAttrazione.add(lblCaff);
+		JLabel lblLido = new JLabel("Lido\r\n");
+		lblLido.setForeground(new Color(255, 215, 0));
+		lblLido.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
+		lblLido.setBounds(192, 484, 89, 47);
+		panelAttrazione.add(lblLido);
 		
 		JButton btnMuseo = new JButton("");
 		btnMuseo.setHorizontalAlignment(SwingConstants.LEFT);
+		btnMuseo.setFocusPainted(false);
 		btnMuseo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -127,6 +130,7 @@ public class SceltaSottocategoriaAttrazioneFrame extends JFrame {
 		
 		JButton btnTour = new JButton("");
 		btnTour.setHorizontalAlignment(SwingConstants.RIGHT);
+		btnTour.setFocusPainted(false);
 		btnTour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -164,6 +168,7 @@ public class SceltaSottocategoriaAttrazioneFrame extends JFrame {
 		});
 		btnTeatro.setIcon(new ImageIcon(SceltaSottocategoriaAttrazioneFrame.class.getResource("/Images/theater.png")));
 		btnTeatro.setOpaque(false);
+		btnTeatro.setFocusPainted(false);
 		btnTeatro.setContentAreaFilled(false);
 		btnTeatro.setBorder(null);
 		btnTeatro.setBounds(582, 236, 259, 142);
@@ -171,6 +176,7 @@ public class SceltaSottocategoriaAttrazioneFrame extends JFrame {
 		
 		JButton btnCinema = new JButton("");
 		btnCinema.setHorizontalAlignment(SwingConstants.LEFT);
+		btnCinema.setFocusPainted(false);
 		btnCinema.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -193,6 +199,7 @@ public class SceltaSottocategoriaAttrazioneFrame extends JFrame {
 		
 		JButton btnParcoDivertimenti = new JButton("");
 		btnParcoDivertimenti.setHorizontalAlignment(SwingConstants.RIGHT);
+		btnParcoDivertimenti.setFocusPainted(false);
 		btnParcoDivertimenti.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -215,6 +222,7 @@ public class SceltaSottocategoriaAttrazioneFrame extends JFrame {
 		
 		JButton btnLido = new JButton("");
 		btnLido.setHorizontalAlignment(SwingConstants.LEFT);
+		btnLido.setFocusPainted(false);
 		btnLido.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -238,6 +246,7 @@ public class SceltaSottocategoriaAttrazioneFrame extends JFrame {
 		JButton btnBack = new JButton("\r\n");
 		btnBack.setBounds(836, 603, 37, 33);
 		panelAttrazione.add(btnBack);
+		btnBack.setFocusPainted(false);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);

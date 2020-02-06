@@ -19,6 +19,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextArea;
 import javax.swing.JSeparator;
 import javax.swing.border.BevelBorder;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class AggiungiAttivitaFrame extends JFrame {
@@ -50,6 +51,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public AggiungiAttivitaFrame(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(AggiungiAttivitaFrame.class.getResource("/Images/home_login.png")));
 		setResizable(false);
 		Controller controller = ctrl;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -320,6 +322,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 		});
 		
 		JButton btnTornaIndietro = new JButton("");
+		btnTornaIndietro.setFocusPainted(false);
 		btnTornaIndietro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
@@ -331,6 +334,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 		panel.add(txtDescrizioneAttivita);
 		
 		JButton btnAggiungiFoto = new JButton("");
+		btnAggiungiFoto.setFocusPainted(false);
 		btnAggiungiFoto.setIcon(new ImageIcon(AggiungiAttivitaFrame.class.getResource("/Images/addPicture.png")));
 		btnAggiungiFoto.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnAggiungiFoto.setOpaque(false);
@@ -356,6 +360,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 		panel.add(btnTornaIndietro);
 		
 		JButton btnAggiungiCategoria = new JButton("");
+		btnAggiungiCategoria.setFocusPainted(false);
 		btnAggiungiCategoria.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lblSottocategoria_1.setVisible(true);
@@ -388,6 +393,7 @@ public class AggiungiAttivitaFrame extends JFrame {
 		panel.add(btnAggiungiCategoria);
 		
 		JButton btnAggiungiAttivita = new JButton("");
+		btnAggiungiAttivita.setFocusPainted(false);
 		btnAggiungiAttivita.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 		 if(controller.gestisciEccezioniAggiungiAttivita(lblNomeAsterisco, txtNomeAttivita, lblViaAsterisco, txtViaAttivita, lblDescrizioneAsterisco,lblAsterisco_immagine,txtDescrizioneAttivita)==true){

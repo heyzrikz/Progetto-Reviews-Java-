@@ -138,7 +138,8 @@ JButton btnBack = new JButton("\r\n");
 		
 		controller.removeAllItems(tableSegnalazioni);
 		controller.setTabellaSegnalazioni(tableSegnalazioni);
-	
+		
+		btnBack.setFocusPainted(false);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);

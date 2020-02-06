@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class MenuPrincipaleProprietario extends JFrame {
@@ -38,6 +39,7 @@ public class MenuPrincipaleProprietario extends JFrame {
 	 * Create the frame.
 	 */
 	public MenuPrincipaleProprietario(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MenuPrincipaleProprietario.class.getResource("/Images/tour.png")));
 		setResizable(false);
 		Controller controller=ctrl;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,6 +80,7 @@ public class MenuPrincipaleProprietario extends JFrame {
 		btnAggiungiAttività.setBorder(null);
 		btnAggiungiAttività.setIcon(new ImageIcon(MenuPrincipaleProprietario.class.getResource("/Images/addLocation.png")));
 		btnAggiungiAttività.setOpaque(false);
+		btnAggiungiAttività.setFocusPainted(false);
 		btnAggiungiAttività.setContentAreaFilled(false);
 		btnAggiungiAttività.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -108,6 +111,7 @@ public class MenuPrincipaleProprietario extends JFrame {
 			}
 		});
 		
+		btnBack.setFocusPainted(false);
 		btnBack.setIcon(new ImageIcon(MenuPrincipaleUtente.class.getResource("/Images/logout.png")));
 		btnBack.setOpaque(false);
 		btnBack.setContentAreaFilled(false);
@@ -117,6 +121,7 @@ public class MenuPrincipaleProprietario extends JFrame {
 		
 		
 		JButton btnRicerca = new JButton("\r\n");
+		btnRicerca.setFocusPainted(false);
 		btnRicerca.setHorizontalAlignment(SwingConstants.LEFT);
 		btnRicerca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -134,6 +139,7 @@ public class MenuPrincipaleProprietario extends JFrame {
 		panel.add(btnRicerca);
 		
 		JButton btnModificaAttivita = new JButton("\r\n");
+		btnModificaAttivita.setFocusPainted(false);
 		btnModificaAttivita.setHorizontalAlignment(SwingConstants.LEFT);
 		btnModificaAttivita.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

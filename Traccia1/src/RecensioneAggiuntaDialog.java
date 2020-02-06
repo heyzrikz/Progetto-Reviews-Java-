@@ -58,6 +58,7 @@ public class RecensioneAggiuntaDialog extends JDialog {
 		btnOk.setIcon(new ImageIcon(ErroreAggiungiRecensioneDialog.class.getResource("/Images/check-mark.png")));
 		btnOk.setBorder(null);
 		btnOk.setContentAreaFilled(false);
+		btnOk.setFocusPainted(false);
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);

@@ -55,6 +55,7 @@ public class AttivitaAggiuntaFallita extends JDialog {
 		panel.add(lblAttivitNonAggiunta);
 		
 		JButton btnOk = new JButton("");
+		btnOk.setFocusPainted(false);
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);

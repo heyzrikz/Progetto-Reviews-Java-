@@ -16,6 +16,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class RegistrazioneFrame extends JFrame {
@@ -51,6 +52,7 @@ public class RegistrazioneFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public RegistrazioneFrame(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(RegistrazioneFrame.class.getResource("/Images/add_moderatore.png")));
 		setResizable(false);
 		Controller controller=ctrl;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -275,6 +277,7 @@ public class RegistrazioneFrame extends JFrame {
 		panel.add(rdbtnProprietario);
 		
 		JButton btnRegistrati = new JButton("Registrati");
+		btnRegistrati.setFocusPainted(false);
 		btnRegistrati.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
@@ -303,6 +306,7 @@ public class RegistrazioneFrame extends JFrame {
 		panel.add(btnRegistrati);
 		
 		JButton btnTornaIndietro = new JButton("");
+		btnTornaIndietro.setFocusPainted(false);
 		btnTornaIndietro.setIcon(new ImageIcon(RegistrazioneFrame.class.getResource("/Images/undo.png")));
 		btnTornaIndietro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

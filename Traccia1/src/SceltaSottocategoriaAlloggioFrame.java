@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class SceltaSottocategoriaAlloggioFrame extends JFrame {
@@ -38,6 +39,7 @@ public class SceltaSottocategoriaAlloggioFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public SceltaSottocategoriaAlloggioFrame(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(SceltaSottocategoriaAlloggioFrame.class.getResource("/Images/search_icon.png")));
 		setResizable(false);
 		setBackground(new Color(128, 0, 0));
 		Controller controller=ctrl;
@@ -69,6 +71,7 @@ public class SceltaSottocategoriaAlloggioFrame extends JFrame {
 		
 		JButton btnHotel = new JButton("");
 		btnHotel.setHorizontalAlignment(SwingConstants.LEFT);
+		btnHotel.setFocusPainted(false);
 		btnHotel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -107,6 +110,7 @@ public class SceltaSottocategoriaAlloggioFrame extends JFrame {
 		btnBeB.setIcon(new ImageIcon(SceltaSottocategoriaAlloggioFrame.class.getResource("/Images/bedAndB.png")));
 		btnBeB.setOpaque(false);
 		btnBeB.setContentAreaFilled(false);
+		btnBeB.setFocusPainted(false);
 		btnBeB.setBorder(null);
 		btnBeB.setBounds(51, 359, 343, 143);
 		panelAlloggio.add(btnBeB);
@@ -129,6 +133,7 @@ public class SceltaSottocategoriaAlloggioFrame extends JFrame {
 				
 				JButton btnOstello = new JButton("");
 				btnOstello.setHorizontalAlignment(SwingConstants.LEFT);
+				btnOstello.setFocusPainted(false);
 				btnOstello.setBounds(51, 575, 366, 140);
 				panelAlloggio.add(btnOstello);
 				btnOstello.addActionListener(new ActionListener() {

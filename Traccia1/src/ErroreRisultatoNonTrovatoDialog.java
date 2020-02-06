@@ -67,6 +67,7 @@ public class ErroreRisultatoNonTrovatoDialog extends JDialog {
 		}
 		{
 			JButton btnOk = new JButton("\r\n");
+			btnOk.setFocusPainted(false);
 			btnOk.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					setVisible(false);

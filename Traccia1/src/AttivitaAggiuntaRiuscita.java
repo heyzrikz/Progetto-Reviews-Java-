@@ -67,6 +67,7 @@ public class AttivitaAggiuntaRiuscita extends JDialog {
 		btnOk.setBorder(null);
 		btnOk.setContentAreaFilled(false);
 		btnOk.setOpaque(false);
+		btnOk.setFocusPainted(false);
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);

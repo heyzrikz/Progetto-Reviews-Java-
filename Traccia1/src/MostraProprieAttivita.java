@@ -137,6 +137,7 @@ public class MostraProprieAttivita extends JFrame {
      	controller.removeAllItems(tableProprieAttivita);
 		controller.setTabellaProprieAttivita(tableProprieAttivita);
 		
+		btnBack.setFocusPainted(false);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);

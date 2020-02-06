@@ -117,6 +117,7 @@ public class VisualizzaSegnalazione extends JFrame {
 		btnElimina.setIcon(new ImageIcon(VisualizzaSegnalazione.class.getResource("/Images/delete.png")));
 		btnElimina.setBounds(473, 412, 47, 43);
 		btnElimina.setBorder(null);
+		btnElimina.setFocusPainted(false);
 		btnElimina.setContentAreaFilled(false);
 		btnElimina.setOpaque(false);
 		contentPane.add(btnElimina);
@@ -143,9 +144,11 @@ public class VisualizzaSegnalazione extends JFrame {
 		btnConferma.setOpaque(false);
 		btnConferma.setContentAreaFilled(false);
 		btnConferma.setBorder(null);
+		btnConferma.setFocusPainted(false);
 		btnConferma.setBounds(427, 412, 47, 43);
 		contentPane.add(btnConferma);
 		
+		btnTornaIndietro.setFocusPainted(false);
 		btnTornaIndietro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);

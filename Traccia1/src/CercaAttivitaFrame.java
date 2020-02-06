@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JSeparator;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class CercaAttivitaFrame extends JFrame {
@@ -39,6 +40,7 @@ public class CercaAttivitaFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public CercaAttivitaFrame(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(CercaAttivitaFrame.class.getResource("/Images/search_icon.png")));
 		setResizable(false);
 		Controller controller=ctrl;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,8 +61,8 @@ public class CercaAttivitaFrame extends JFrame {
 		
 		JLabel lblCercaAttivit = new JLabel("CERCA ATTIVITA'");
 		lblCercaAttivit.setForeground(new Color(255, 215, 0));
-		lblCercaAttivit.setFont(new Font("Corbel Light", Font.BOLD, 30));
-		lblCercaAttivit.setBounds(217, 16, 255, 46);
+		lblCercaAttivit.setFont(new Font("Malgun Gothic", Font.BOLD, 30));
+		lblCercaAttivit.setBounds(212, 28, 255, 46);
 		panel.add(lblCercaAttivit);
 		
 		JComboBox<String> comboBoxNome = new JComboBox<String>();
@@ -122,6 +124,7 @@ public class CercaAttivitaFrame extends JFrame {
 			}
 		});
 		JButton btnBack = new JButton("\r\n");
+		btnBack.setFocusPainted(false);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				comboBoxCategoria.setVisible(false);
@@ -181,6 +184,7 @@ public class CercaAttivitaFrame extends JFrame {
 		btnCerca.setOpaque(false);
 		btnCerca.setContentAreaFilled(false);
 		btnCerca.setBorderPainted(false);
+		btnCerca.setFocusPainted(false);
 		btnCerca.setBorder(null);
 		btnCerca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

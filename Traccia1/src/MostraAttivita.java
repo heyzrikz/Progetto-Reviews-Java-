@@ -136,7 +136,7 @@ public class MostraAttivita extends JFrame {
 		
      	controller.removeAllItems(tableAttivita);
 		controller.setTabellaAttivita(tableAttivita);
-		
+		btnBack.setFocusPainted(false);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controller.removeAllItems(tableAttivita);

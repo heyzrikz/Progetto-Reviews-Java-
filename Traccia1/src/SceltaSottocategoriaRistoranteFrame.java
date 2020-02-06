@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class SceltaSottocategoriaRistoranteFrame extends JFrame {
@@ -37,6 +38,7 @@ public class SceltaSottocategoriaRistoranteFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public SceltaSottocategoriaRistoranteFrame(Controller ctrl) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(SceltaSottocategoriaRistoranteFrame.class.getResource("/Images/search_icon.png")));
 		setResizable(false);
 		setBackground(new Color(128, 0, 0));
 		Controller controller=ctrl;
@@ -115,6 +117,7 @@ public class SceltaSottocategoriaRistoranteFrame extends JFrame {
 		panelRistorante.add(lblStreetfood);
 		
 		JButton btnCucinaLocale = new JButton("");
+		btnCucinaLocale.setFocusPainted(false);
 		btnCucinaLocale.setHorizontalAlignment(SwingConstants.LEFT);
 		btnCucinaLocale.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -137,6 +140,7 @@ public class SceltaSottocategoriaRistoranteFrame extends JFrame {
 		panelRistorante.add(btnCucinaLocale);
 		
 		JButton btnPizza = new JButton("");
+		btnPizza.setFocusPainted(false);
 		btnPizza.setHorizontalAlignment(SwingConstants.RIGHT);
 		btnPizza.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -159,6 +163,7 @@ public class SceltaSottocategoriaRistoranteFrame extends JFrame {
 		panelRistorante.add(btnPizza);
 		
 		JButton btnPesce = new JButton("");
+		btnPesce.setFocusPainted(false);
 		btnPesce.setHorizontalAlignment(SwingConstants.LEFT);
 		btnPesce.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -182,6 +187,7 @@ public class SceltaSottocategoriaRistoranteFrame extends JFrame {
 		
 		JButton btnGiapponese = new JButton("");
 		btnGiapponese.setHorizontalAlignment(SwingConstants.LEFT);
+		btnGiapponese.setFocusPainted(false);
 		btnGiapponese.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -204,6 +210,7 @@ public class SceltaSottocategoriaRistoranteFrame extends JFrame {
 		
 		JButton btnSteakhouse = new JButton("");
 		btnSteakhouse.setHorizontalAlignment(SwingConstants.RIGHT);
+		btnSteakhouse.setFocusPainted(false);
 		btnSteakhouse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -226,6 +233,7 @@ public class SceltaSottocategoriaRistoranteFrame extends JFrame {
 		
 		JButton btnCaffe = new JButton("");
 		btnCaffe.setHorizontalAlignment(SwingConstants.RIGHT);
+		btnCaffe.setFocusPainted(false);
 		btnCaffe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -248,6 +256,7 @@ public class SceltaSottocategoriaRistoranteFrame extends JFrame {
 		
 		JButton btnCinese = new JButton("");
 		btnCinese.setHorizontalAlignment(SwingConstants.RIGHT);
+		btnCinese.setFocusPainted(false);
 		btnCinese.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -270,6 +279,7 @@ public class SceltaSottocategoriaRistoranteFrame extends JFrame {
 		
 		JButton btnStreetfood = new JButton("");
 		btnStreetfood.setHorizontalAlignment(SwingConstants.LEFT);
+		btnStreetfood.setFocusPainted(false);
 		btnStreetfood.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -292,6 +302,7 @@ public class SceltaSottocategoriaRistoranteFrame extends JFrame {
 		
 JButton btnBack = new JButton("\r\n");
 btnBack.setBounds(836, 670, 37, 33);
+btnBack.setFocusPainted(false);
 panelRistorante.add(btnBack);
 btnBack.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent e) {

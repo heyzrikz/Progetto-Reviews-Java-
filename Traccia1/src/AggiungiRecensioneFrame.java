@@ -20,6 +20,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class AggiungiRecensioneFrame extends JFrame {
@@ -46,6 +47,7 @@ public class AggiungiRecensioneFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public AggiungiRecensioneFrame(Controller ctrl){
+		setIconImage(Toolkit.getDefaultToolkit().getImage(AggiungiRecensioneFrame.class.getResource("/Images/add_review.png")));
 		setResizable(false);
 		Controller controller=ctrl;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -169,6 +171,7 @@ public class AggiungiRecensioneFrame extends JFrame {
 		
 		btnAggiungiRecensione.setBounds(275, 419, 37, 33);
 		btnAggiungiRecensione.setOpaque(false);
+		btnAggiungiRecensione.setFocusPainted(false);
 		btnAggiungiRecensione.setContentAreaFilled(false);
 		btnAggiungiRecensione.setBorderPainted(false);
 		btnAggiungiRecensione.setBorder(null);
@@ -185,6 +188,7 @@ public class AggiungiRecensioneFrame extends JFrame {
 		});
 		btnBack.setIcon(new ImageIcon(AggiungiRecensioneFrame.class.getResource("/Images/undo.png")));
 		btnBack.setBounds(221, 419, 37, 33);
+		btnBack.setFocusPainted(false);
 		btnBack.setOpaque(false);
 		btnBack.setContentAreaFilled(false);
 		btnBack.setBorderPainted(false);
